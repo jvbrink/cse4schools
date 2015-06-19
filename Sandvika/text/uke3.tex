@@ -1,0 +1,175 @@
+
+\documentclass[a4paper, 11pt, notitlepage, english]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{amsbsy, amsfonts}
+\usepackage{graphicx, color}
+\usepackage{parskip}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{flafter}
+\usepackage{caption}
+
+%\DeclareCaptionLabelSeparator{colon}{. }
+\renewcommand{\captionfont}{\sffamily}
+\renewcommand{\captionlabelfont}{\bf\sffamily}
+\setlength{\captionmargin}{20pt}
+
+\usepackage{geometry}
+\geometry{headheight=0.01mm}
+\geometry{top=24mm, bottom=29mm, left=39mm, right=39mm}
+
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{10pt}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+%
+% Parametere for inkludering av kode fra fil
+%
+\usepackage{listings}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=python,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+captionpos=b,
+showstringspaces=false,
+frame= single,
+breaklines=true}
+%
+% Definering av egne kommandoer og miljøer
+%
+
+\newcommand{\bt}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\textsf{\textbf{#1}}}
+\newcommand{\I}{\boldsymbol{\mathcal{I}}}
+\newcommand{\p}{\partial}
+\renewcommand{\d}{\text{d}}
+%
+% Navn og tittel
+%
+\author{Jonas van den Brink \\ \texttt{j.v.d.brink@fys.uio.no}}
+\title{Introduksjon til vitenskapelig programmering \\ Uke 3 \\ Sandvika vgs}
+
+\begin{document}
+\maketitle
+
+Denne uken kommer hovedsakelig til å gå med til repetisjon av tidligere programmering, for den delen er det greit å se på notatene fra forrige gang, samt å se på oppgavene vi har gitt dere der.
+
+Andre halvdel av denne uka kommer til å gå med til å starte å se på fysikken vi skal løse i de siste to ukene av prosjektet, og det er det vi skriver om i dette notatet.
+
+
+\section{Fallskjermhopping}
+
+Vi skal nå begynne å studere hvordan hastigheten til en person som hopper i fallskjerm endrer seg over tid. Vi kommer til å finne matematiske ligninger basert på vår fysiske forståelse av de kreftene som virker på hopperen. Vi skal diskutere ligningene vi kommer frem til, og se på hvorfor ikke greier å løse dem med kun penn og papir. Vi skal derfor se hvordan vi kan løse ligningene ved hjelp av programmering.
+
+
+Et fallskjermhopp består hovedsakelig av to deler. Den første delen er det som skjer før fallskjerm er utløst, denne delen kalles gjerne \emph{fritt fall}, i de fleste sportssammenhenger vil man oppleve ca ett minutt fritt fall per hopp. Etter dette utløser hopperen fallskjermen som da drastisk reduserer fallhastigheten, under fallskjerm brukeren hopperen så vanligvis fra ett til tre minutter videre ned til bakken avhengig av hvor stor fallskjerm de bruker og hvor nærme bakken de utløste skjermen.
+
+I begge faser utsettes hopperen bare for to krefer, tyngdekraft og luftmotstand. Så vi har
+$$\sum F = F_G + F_D,$$
+der $F_G$ er tyngdekraften og $F_D$ er luftmotstand. Dere har sikkert kjennskap til at tyngdekraften er gitt ved
+$F_G = mg,$
+der $m$ er den totale massen til hopperen, som vil se personvekten og alt utstyret, og $g$ er tyngdens akselersjonskonstant, som vi setter til $g=9.81$ m/s$^2$. En fallskjermhopper vil falle med veldig høy hastighet, og vi bruker derfor en kvadratisk form på luftmotstanden, som vi kan skrive som følger
+$$F_D = \frac{1}{2}\rho C A v^2,$$
+her er $\rho$ tettheten til luft, $C$ er luftmotstandskoeffisienten som avhenger av formen på objektet som faller og $A$ er frontarealet.
+For å slippe å skrive så mye kaller vi disse tallene samlet for $D$, slik at
+$$\frac{1}{2}\rho C A = D,$$
+$$F_D = -Dv^2.$$
+ligningen vi skal løse har altså følgende form
+$$ma = mg - D v^2.$$
+Dette er det som matematisk kalles en differensialligning, la oss diskutere hva det betyr.
+
+\section*{Differensialligninger}
+Tidligere når vi har sett på ligninger, så er det et matematisk uttrykk, der vi løser for en ukjent. For eksempel kan vi ha ligningen
+$$x^2 + 7 = 56.$$
+Dette er en ligning fordi vi har en "likhet". Og vi vet at vi kan løse denne for $x$, ved å flytt over konstanten $7$, og så ta roten, da finner vi at 
+$$x = \pm 7.$$
+Altså har vi løst ligningen, og funnet at $x$ er 7. En differnsialligning er også en ligning fordi den innholder en "likhet" på samme måte, og den har en ukjent vi løser for. Den store forskjellen er at den ukjente vi løser for, er ikke lenger et enkelt tall, men det er derimot en funksjon.
+
+Newtons 2.\ lov er et perfekt eksempel på en differensialligning, som vi løser for å finne enten farten, eller posisjonen, til et objekt. Her er både farten, og posisjonen, eksempler på funksjoner, fordi de endrer seg med tid: $v(t)$, $x(t)$. En differensialligning vil innholde den deriverte av funksjonen vi er ute etter, som er mer synlig om vi skriver akselerasjonen som den deriverte av hastigheten i Newtons 2.\ lov:
+$$\sum F = ma = m\frac{\d v}{\d t}.$$
+Differensialligningen vi prøver å løse er:
+$$m\frac{\d v}{\d t} = mg - D v(t)^2.$$
+
+Så, hvordan løser vi en slik ligning? Vel, det finnes utrolig mange forskjellige typer differensialligninger, og det finnes enda flere metoder før å løse dem! De som tar R2, kommer til å lære en del om å løse denne type ligninger, men vi har ikke tid til å dekke så altfor mye av det pensumet her.
+
+\subsection*{Uløslighet}
+Differensialligningen vi ønsker å løse er
+$$m\frac{\d v}{\d t} = mg - D v(t)^2,$$
+og vi ønsker å løse den for hastigheten $v(t)$. Men dette får vi ikke til, fordi akselerasjonen avhenger av hastigheten. Dette er nettopp grunnen til at vi ofte ser bortifra luftmotstand når vi løser Newtons 2.\ lov. Ofte er dette greit fordi resultatet er tilnærmet likt med og uten. Men, i visse tilfeller vil luftmotstand gi et veldig stort forskjell - og det er tilfellet i fallskjermhopping.
+
+\section{Fremgangsmåte}
+Så, hvordan kan vi løse en uløselig ligning ved hjelp av programmering? Idéen er ganske enkel, men la oss prøve å ta det steg for steg.
+
+La oss starte med å se på hvordan det hadde gått om vi hadde sett bortifra luftmotstand, da hadde vi hatt fritt fall
+$$ma = \sum F = mg,$$
+slik at akselerasjonen hadde vært konstant
+$$a = g.$$
+I det tilfellet hadde vi kunnet bruke bevegelsesligningene, som hadde gitt oss svarene
+$$v(t) = v_0 + at.$$
+og 
+$$x(t) = x_0 + v_0 t + \frac{1}{2}at^2.$$
+Altså ser vi at hastigheten vokser konstant for alltid. Som selvfølgelig ikke kan stemme, da vi vet at en fallskjermhopper vil treffe \emph{terminalhastighet} ganske fort.
+
+\subsubsection*{Terminalhastighet}
+Terminalhastigheten er den raskeste hastigheten et objekt kan falle med, og vi kan enkelt finne den uten å løse differensialligningene vår, vi vet at når luftmotstanden er like stor som tyngdekraften, så vil summen av kreftene på hopperen være 0, og da er akselerasjonen null og falleren faller med en konstant hastighet, nemlig terminalhastigheten. Vi har altså
+$$mg = \frac{1}{2}\rho C A v_T^2,$$
+når vi løser denne for terminalhastigheten har vi
+$$v_T = \sqrt{\frac{2mg}{\rho C A}},$$
+og når vi setter inn rimelige verdier ($m=90$ kg, $C=1.4$, $\rho=1$ kg/m$^3$, $A=0.7$ m$^2$, $g=9.81$ m/s$^2$) får vi
+$$v_T = 42.4 {\rm\ m/s} = 153 {\rm\ km/h}.$$
+
+\section{Bruke bevegelsesligningene med luftmotstand}
+Om vi nå legger til luftmotstanden igjen, vet vi at vi ikke kan bruke bevegelsesligningene, fordi vi ikke har konstant akselerasjon. Vi har
+$$a(v) = g - \frac{1}{2m}Dv^2,$$
+og ettersom at hastigheten øker, så vil akselerasjonen minke med tiden. Merk at vi skriver $a(v)$, fordi akselerasjonen er en funksjon av hastigheten. Om vi derimot ser på en veldig liten tidsendring $\Delta t$, så vet vi at hastigheten vil endre seg veldig lite, så vi kan bruke bevegelsesligningene et kort \emph{steg} frem i tid ved å si at akselerasjonen er konstant en kort tid:
+$$v_1 = v_0 + a(v_0)\Delta t.$$
+Nå har vi altså funnet hastigheten til hopperen en kort tid etter han startet. Vi kan nå gå enda litt lenger frem i tid, ved å oppdatere akselerasjonen, og si at den er konstant en ny kort tidsperiode
+$$v_2 = v_1 + a(v_1)\Delta t.$$
+Trikset her, er å la $\Delta t$ være veldig liten, slik at akselerasjonen er tilnærmet konstant. Vi må derfor ta veldig mange slike små tidsteg:
+$$v_{n+1} = v_n + a(t_n)\Delta t,$$
+og på denne måten kan vi løse differensialligningen vår et skritt av gangen til vi har funnet hele løsningen.
+
+\subsection{En mer matematisk tankemåte}
+Differensialligningen vår er
+$$a = g - \frac{D}{m}v^2,$$
+og vi kan skrive akselerasjonen som den deriverte av hastigheten
+$$\frac{\d v}{\d t} = g - \frac{D}{m}v^2.$$
+Definisjonen av den deriverte av $v$ er
+$$a = \frac{\d v}{\d t} = \lim_{\Delta t \to 0} \frac{v(t+\Delta t)-v(t)}{\Delta t}.$$
+Vi kan si at vi tilnærmer den deriverte ved istedenfor å la $\Delta t$ gå helt mot 0, at vi stopper den på et lite tall, vi har da at
+$$a = \frac{\d v}{\d t} \approx \frac{v(t+\Delta t) - v(t)}{\Delta t}.$$
+slik at
+$$v(t+\Delta t) = v(t) + a\Delta t.$$
+Vi ser altså at dersom vi kjenner farten ved tiden $t$, så kan vi finne den en kort tid senere ved å plusse på $a \Delta t$, der vi kan "late som" akselerasjonen er konstant.
+
+
+
+
+\end{document}

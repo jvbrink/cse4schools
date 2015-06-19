@@ -1,0 +1,413 @@
+\documentclass[a4paper, 11pt, notitlepage, english]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{amsbsy, amsfonts}
+\usepackage{graphicx, color}
+\usepackage{parskip}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{flafter}
+\usepackage{caption}
+
+%\DeclareCaptionLabelSeparator{colon}{. }
+\renewcommand{\captionfont}{\sffamily}
+\renewcommand{\captionlabelfont}{\bf\sffamily}
+\setlength{\captionmargin}{40pt}
+
+\usepackage{geometry}
+\geometry{headheight=0.01mm}
+\geometry{top=24mm, bottom=29mm, left=39mm, right=39mm}
+
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{10pt}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+%
+% Parametere for inkludering av kode fra fil
+%
+\usepackage{listings}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=python,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+captionpos=b,
+showstringspaces=false,
+frame= single,
+breaklines=true}
+%
+% Definering av egne kommandoer og miljøer
+%
+\newcommand{\dd}[1]{\ \text{d}#1}
+\newcommand{\f}[2]{\frac{#1}{#2}} 
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\braup}[1]{\langle #1 \left|\uparrow\rangle\right.}
+\newcommand{\bradown}[1]{\langle #1 \left|\downarrow\rangle\right.}
+\newcommand{\av}[1]{\left| #1 \right|}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\braopket}[3]{\langle #1 | {#2} | #3 \rangle}
+\newcommand{\ketbra}[2]{\ket{#1}\bra{#2}}
+\newcommand{\pp}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\ppn}[1]{\frac{\partial^2}{\partial #1^2}}
+\newcommand{\up}{\left|\uparrow\rangle\right.}
+\newcommand{\upup}{\left|\uparrow\uparrow\rangle\right.}
+\newcommand{\down}{\left|\downarrow\rangle\right.}
+\newcommand{\downdown}{\left|\downarrow\downarrow\rangle\right.}
+\newcommand{\updown}{\left|\uparrow\downarrow\rangle\right.}
+\newcommand{\downup}{\left|\downarrow\uparrow\rangle\right.}
+\newcommand{\bupup}{\left.\langle\uparrow\uparrow\right|}
+\newcommand{\bdowndown}{\left.\langle\downarrow\downarrow\right|}
+\newcommand{\bupdown}{\left.\langle\uparrow\downarrow\right|}
+\newcommand{\bdownup}{\left.\langle\downarrow\uparrow\right|}
+\renewcommand{\d}{{\rm d}}
+\newcommand{\Res}[2]{{\rm Res}(#1;#2)}
+\newcommand{\To}{\quad\Rightarrow\quad}
+\newcommand{\eps}{\epsilon}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+
+
+\newcommand{\bt}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\textsf{\textbf{#1}}}
+\newcommand{\I}{\boldsymbol{\mathcal{I}}}
+\newcommand{\p}{\partial}
+%
+% Navn og tittel
+%
+\author{Jonas van den Brink \\ \texttt{j.v.d.brink@fys.uio.no}}
+\title{Introduksjon til vitenskapelig programmering \\ Uke 1 \\ Sandvika vgs}
+
+\begin{document}
+\maketitle
+
+Denne teksten er ment som en kort oppsummering av det vi håper å ha kommet igjen etter første uke. Programmering er en ferdighet det tar tid å lære seg, og den beste måten å lære det på er rett og slett å prøve seg frem. Vi håper derfor at dere tar dere tid til å se litt på programmering på egenhånd, og skriver noen korte, enkle, og kanskje teite programmer.
+
+\section*{Installasjon}
+
+Vi kommer til å bruke programmeringsspråket \emph{Python}. Det er i prinsippet gratis, og det finnes mange forskjellige versjoner, og mange forskjellige tillegspakker. Den enkleste måten å installere alt vi trenger for dette prosjektet er å installere en samlepakke som heter \emph{Enthought Canopy}. Den laster du ned fra linken her
+
+\hspace{2cm}\url{https://www.enthought.com/downloads/}.
+
+Når filen er ferdig lastet ned, kjører du den og følger instruksene. Du kan la alt av innstillinger stå på standard om du ikke har andre preferanser.
+
+Når du har installert Canopy, kan du starte programmet. Siden det er en samle\-pakke er det en del funksjonalitet vi ikke kommer til å bruke, så ikke bli skremt av det kanskje ser litt komplisert ut.
+
+\section*{Hva er egentlig programmering?}
+
+Programmering går ut på å gi instrukser til datamaskinen. Disse instruksene skriver vi inn som kommandoer i en tekstfil. Denne tekstfilen kan så \emph{kjøres} av datamaskinen, som da tolker kommandoene vi har skrevet. Det er det som er et dataprogram. Kommandoene vi skriver må følge et bestemt programmeringsspråk, og det finnes fryktelig mange slike språk idag. Vi kommer til å holde oss til Python, et av de mest brukte programmeringsspråkene idag. Python er også et fint språk å begynne med om man aldri har programmert før.
+
+Moderne datamaskiner er fryktelig raske, men de er desverre ikke særlig smarte. Når vi programmerer må vi derfor være flinke til å gi helt riktige instrukser, om vi gir feil instrukser vil enten datamaskinen ikke skjønne hva vi mener, eller den vil rett og slett gjøre feil ting. Du må ikke være redd for å gjøre feil når du programmerer, det greier man rett og slett ikke å unngå. Det viktige er at du prøver å forstå \emph{hva} som gikk galt, og hvordan man kan rette det opp. Selv de beste programmererene i verden bruker mye av tiden sin på å rette opp i feil i programmer. Feil i koden blir ofte kalt \emph{bugs}, og det å rette opp i dem blir derfor kalt \emph{bugfixing}.
+
+\section*{Vi setter igang}
+
+Om vi starter Canopy, og velger \emph{Editor}, får vi opp et vindu der vi kan skrive et slikt dataprogram. Du skriver da koden inn i det største vinduet øverst. Du kan lagre programmet ditt med det navnet du vil, men du må legge på endelsen \verb+.py+, for Python. Etter du har lagret programmet ditt, kan du kjøre det ved å klikke på \emph{Run}-knappen, som er en grønn pil på toppen av editoren. En snarvei for Run er \verb!ctrl+R!.
+
+La oss se på et eksempel på et enkelt dataprogram:
+\begin{lstlisting}
+# Calculating the area and volume of a football
+
+from pylab import pi 
+
+r = 10
+
+area = 4*pi*r**2
+volume = (4./3)*pi*r**3
+
+print "A football with radius:", r
+print "Has an area of:", area 
+print "And volume of:", volume
+\end{lstlisting}
+
+Her er det ikke viktig at du skjønner alt som skjer i detalj, men la oss prøve å skjønne hovedtrekkene. Når vi trykker på Run-knappen, starter programmet med å tolke det som er skrevet, linje for linje. La oss derfor forklare det som skjer nedover i programmet, linje for linje.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+# Calculating the area and volume of a football
+\end{lstlisting}
+\vspace{-0.3cm}
+Fordi den første linjen begynner med tegnet \verb+#+, betyr det at denne linjen ikke tolkes av datamaskinen i det heletatt. Vi kaller en slik linje for en kommentar, og det er rett og slett en forklaringstekst til enten oss selv, eller andre som skal lese koden vår. Vi skjønner altså at dette enkle programmet skal regne ut arealet og volumet av en fotball. Merk også at hele linjen er en annen farge fra resten av koden, dette gjør Canopy for at det skal være lettere å tolke koden.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+from pylab import pi
+\end{lstlisting}
+\vspace{-0.3cm}
+Denne linjen ser kanskje litt avansert ut, men her importeres rett og slett tallet $\pi$. Vi trenger $\pi$ for å regne ut arealet og volumet til en kule, men den er ikke originalt tilstede i Python, vi må \emph{importere} den fra tillegspakken \emph{pylab}. Det finnes veldig mange slike tileggspakker i Python, til mange forskjellige bruksomeråder. I vårt tilfelle inneholder Pylab alt vi kommer til å trenge.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+r = 10
+\end{lstlisting}
+\vspace{-0.3cm}
+Her defineres det at det finnes en \emph{variabel} som heter $r$, og at den skal være 10. Utifra kommentaren på starten av programmet skjønner vi at dette mest sannsynligvis er radiusen til fotballen. Denne linjen sier altså at radiusen er 10.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+area = 4*pi*r**2
+\end{lstlisting}
+\vspace{-0.3cm}
+Her regnes arealet til fotballen ut fra den matematiske formelen $4\pi r^2,$
+og resultatet lagres i en \emph{variabel} som kalles \verb+area+.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+volume = (4./3)*pi*r**3
+\end{lstlisting}
+\vspace{-0.3cm}
+Og her regnes volumet ut fra $\frac{4}{3}\pi r^3$, og resultatet lagres i \verb+volume+.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+print "A football with radius:", r
+print "Has an area of:", area 
+print "And volume of:", volume
+\end{lstlisting}
+\vspace{-0.3cm}
+Til slutt kommer tre veldig like linjer. Alle bruker kommandoen \verb+print+, som forteller Python at vi skal skrive et resultat til skjermen, slik at brukeren kan lese det. Tekst vi skriver omsluttes av fnutter: \verb+"+, og vi ber Python skrive ut resultatene av utregningene etter teksten.
+
+Når programmet kjøres, får vi dette resultatet:
+\begin{lstlisting}
+A football with radius: 10
+Has an area of: 1256.63706144
+And volume of: 4188.79020479
+\end{lstlisting}
+
+\section*{Variabler og regning}
+I eksempelet vi nettopp så på, ble vi introdusert til et veldig viktig konsept i programmering, nemlig variabler. Variabler bruker vi når vi vil at datamaskinen skal huske på en verdi vi gir den, eller noe den regner ut.
+
+Hvis vi for eksempel skriver
+\begin{lstlisting}
+a = 6
+\end{lstlisting}
+\vspace{-0.3cm}
+vil datamaskinen opprette en variabel som heter \verb+a+, som inneholder \emph{verdien} 1. Den vil så huske på denne variabelen helt til programmet er ferdig å kjøre. Hvis vi for eksempel vil skrive ut innholdet av en variabel til skjerm, bruker vi \verb+print+ commandoen, så å skrive
+\begin{lstlisting}
+print a
+\end{lstlisting}
+\vspace{-0.3cm}
+gjør at det skrives ut et ettall til skjermen.
+
+Vi kan også regne med en eller flere variabler. Hvis vi for eksempel også definerer en variabel \verb+b+, ved å skrive
+\begin{lstlisting}
+b = 3
+\end{lstlisting}
+\vspace{-0.3cm}
+Så kan vi bruke regne med disse variablene, hvis vi foreksempel skriver
+\begin{lstlisting}
+print a + b
+print a - b
+print a * b
+print a / b
+\end{lstlisting}
+\vspace{-0.3cm}
+får vi følgende resultater
+\begin{lstlisting}
+9
+3
+18
+2
+\end{lstlisting}
+\vspace{-0.3cm}
+
+Merk at \verb+a+ og \verb+b+ ikke endrer seg når vi regner med dem på denne måten. Dette kan vi dobbeltsjekke ved å skrive dem ut på nytt:
+\begin{lstlisting}
+print a
+print b
+\end{lstlisting}
+\vspace{-0.3cm}
+som gir
+\begin{lstlisting}
+6
+3
+\end{lstlisting}
+\vspace{-0.3cm}
+Hvis vi ønsker å endre en variabel vi allerede har definert, kan vi redefinere den, så vi kan nå skrive
+\begin{lstlisting}
+a = -2
+\end{lstlisting}
+\vspace{-0.3cm}
+Merk at dette \emph{overskriver} den gamle verdien av \verb+a+, slik at programmet ikke husker hvilken verdi den var før. Vi kan også definere en variabel ved for eksempel å skrive
+\begin{lstlisting}
+x = -4
+y = 6
+z = x + y
+\end{lstlisting}
+\vspace{-0.3cm}
+Her definerer vi først \verb+x+ og \verb+y+, og deretter \verb+z+ som blir satt til resultatet av utregningen \verb!x+y!. Om vi nå skriver ut \verb+z+ ser vi at den blir \verb+2+, som forventet. Merk at det som skjer her, er at høyresiden regnes ut, og resultatet lagres i \verb+z+-variabelen. Python husker altså ikke hvor verdien $2$ som lagres i \verb+z+ kommer fra, den bare husker selve verdien. Prøv for eksempel å forklare hva som vil skrives ut om vi kjører denne lille kodesnutten:
+\begin{lstlisting}
+x = 3
+y = -3
+z = x + y
+y = 6
+print x 
+print y 
+print z
+\end{lstlisting}
+\vspace{-0.3cm}
+Vil \verb+z+ inneholde verdien 0, eller 9? Bare prøv, og se hva som skjer!
+
+Merk at likhetstegner, \verb+=+, har en ganske annerledes betydning i programmering enn den har i matematikk. I matematikk er vi vant til at den brukes for å angi en likhet, altså en ligning. Det har for eksempel ingenting å si om vi skriver
+$$x^2 = 4 \qquad \mbox{ eller } \qquad 4 = x^2,$$ 
+i matte. I programmering fungerer derimot ingen av disse. Tegnet \verb+=+, brukes i Python alltid til å definere (eller redefinere) variable. Den virker alltid ved at den regner ut det som er på høyre-side, og så lagrer resultatet i variabelen på venstre side. Det er kanskje altså mer fornuftig å tenke på det som en slags pil, som peker fra høyre mot venstre.Kodesnutten
+\begin{lstlisting}
+x = 9
+y = 4
+z = x*y
+\end{lstlisting}
+\vspace{-0.3cm}
+Kan altså tolkes som
+\begin{align*}
+x &\leftarrow 9 \\
+y &\leftarrow 4 \\
+z &\leftarrow x*y
+\end{align*}
+Når du begynner å skjønne denne tankegangen kan vi begynne å gjøre ting som kanskje ser litt rare ut. Vi kan for eksempel skrive
+\begin{lstlisting}
+x = 3
+x = x + 10
+\end{lstlisting}
+\vspace{-0.3cm}
+Fra et matematisk ståsted ser dette fryktelig ut, ligningen
+$$x = x+10,$$
+gir ingen menining. Men i programmering er dette ganske greit. Først sier vi at \verb+x+ skal være 3, så regner vi ut høyre-siden, som da vil si $10+3 = 13$, og så lagrer vi 13 i \verb+x+. Du kan sjekke at det er dette som faktisk skjer, ved å printe ut \verb+x+ og sjekke selv.
+
+Hitill har vi bare vist eksempeler på variabler som inneholder tall, men de kan også inneholde andre ting, som for eksempel tekst, sannhetsverdier, og andre, mer kompliserte ting. Vi kan også gi dem mer kompliserte navn, i praksis er dette ofte lurt, fordi det gjør det lettere for oss å huske på hva de forskjellige variablene er i et langt og rotete dataprogram. I eksempelprogrammet vi viste på starten brukte vi variabelnavn som \verb+area+ og \verb+volume+.
+
+La oss se på et enkelt eksempel på hvordan vi kan bruke en variabel med tekst
+\begin{lstlisting}
+name = "Jonas"
+print "Hi", name, "! Hope you have a nice day =)."
+\end{lstlisting}
+\vspace{-0.3cm}
+Merk at for å opprette en variabel med tekst, så lar vi teksten stå i fnutter: \verb+"tekst"+, dette er for å få Python til å skjønne at den ikke skal prøve å tolke teksten som kode. En slik tekst som ikke er kode kalles en \emph{tekststreng}. Merk også at print kommandoen vi gi er litt mer komplisert en vanlig, fordi den skriver ut tre ting. Først skriven den ut tekstrengen \verb+"Hi!"+, merk at fnuttene ikke vises på skjermen når utskriften kommer, så skriver vi ut innholden av variabelen \verb+name+, og så skrives den siste teksstrengen.
+
+\textbf{Datatyper og heltallsdivisjon}
+
+Så langt har vi sett at variabler kan ha forskjellig typer innhold. Python har en måte å sjekke hvilken type innhold en variabel har, som vi kan bruke som følger
+\begin{lstlisting}
+a = 4
+x = 3.14
+name = "Jonas"
+print type(a)
+print type(b)
+print type(c)
+\end{lstlisting}
+\vspace{-0.3cm}
+og resultatet blir som følger
+\begin{lstlisting}
+<type 'int'>
+<type 'float'>
+<type 'str'>
+\end{lstlisting}
+\vspace{-0.3cm}
+Som vil si at \verb+a+ er av type \emph{int}, som står for integer, altså heltall, \verb+x+ er \emph{float}, som betyr desimaltall, og \verb+name+ er \emph{str}, altså en tekststreng.
+
+For vårt bruk er det ikke så viktig å ha oversikt over alle disse datatypene og hvordan de oppfører seg. Men vær obs på at dere kommer nok til å gjøre litt feil med disse, så det kan være greit å tenke litt over hvordan ting fungerer i detalj i blant.
+
+En veldig vanlig feil å gjøre for eksempel, er noe som kalles \emph{heltallsdivisjon}. Dette er når vi har to tall som Python tenker på som heltall, og prøver å dele disse på hverandre
+\begin{lstlisting}
+a = 5
+b = 3
+print a/b
+\end{lstlisting}
+\vspace{-0.3cm}
+I dette tilfellet forventer vi kanskje resultatet
+$$5/3 = 1.666667,$$
+men det vi får er bare 1. Det er fordi Python tenker på \verb+a+ og \verb+b+ som heltall, og tror derfor at det vi er interessert i er et heltall! For å tvinge python til å skjønne at vi vil faktisk ha desimaltall, bør vi definere \verb+a+ og \verb+b+ som desimaltall, det kan vi gjøre ved å skrive
+\begin{lstlisting}
+a = 5.0
+b = 3.0
+\end{lstlisting}
+\vspace{-0.3cm}
+eller bare
+\begin{lstlisting}
+a = 5.
+b = 3.
+\end{lstlisting}
+\vspace{-0.3cm}
+Når vi gjør en divisjon med et desimaltall og et heltall, tolker Python det som at vi vil ha "vanlig" divisjon, så hvis vi er interessert i å regne ut kinetisk energi for eksempel, som matematisk sett har formelen
+$$K = \frac{1}{2}mv^2,$$
+kan vi bruke utrykket:
+\begin{lstlisting}
+kinetic_energy = 1./2*m*v**2
+\end{lstlisting}
+\vspace{-0.3cm}
+Et par ting å merke seg her: Vi skriver nevneren i brøken med et punktum, for å unngå heltallsdivisjon (\verb+1/2+ hadde gitt 0), og vi skriver "opphøyd i" med \verb+**+.
+
+\subsection*{Matematiske funksjoner}
+Om vi er interessert i å regne med vanlige matematiske konstanter og funksjoner, som for eksempel $\pi$, $e^x$, $\sin(x)$, osv, ligger disse lagret i pylab pakken. Vi kan da enkelt importere dem med kommandoer på formen:
+\begin{lstlisting}
+from pylab import pi, exp, sin
+\end{lstlisting}
+\vspace{-0.3cm}
+og da bruken dem på følgende måte:
+\begin{lstlisting}
+print sin(2*pi)
+\end{lstlisting}
+\vspace{-0.3cm}
+
+Vi kommer til å vise dere hvordan dere kan lage deres egne matematiske funksjoner i Python, som for eksempel:
+$$f(x) = 4x^2 + 3x + 4,$$
+i løpet av de neste ukene.
+
+Hvis vi har lyst til å importere alt som ligger i pylab pakken, kan vi skrive
+\begin{lstlisting}
+from pylab import *
+\end{lstlisting}
+
+
+\clearpage
+
+\section*{Oppgave 1}
+\begin{itemize}
+    \item[(a)] Lag et skript som skriver ut teksten "Hello, World!" til skjermen.
+    \item[(b)] Lag et skript som skriver ut verdien av 4*5+2 til skjermen, blir resultatet annerledes om du skriver 2+4*5?
+    \item[(c)] Lag et skript som regner ut $2^{10}$ og skriver resultatet til skjermen.
+    \item[(d)] Lag et skript som regner ut $\sqrt{3}$ og skriver resultatet til skjermen. Her må du først importere \verb+sqrt+-kommandoen (squareroot) fra pylab.
+\end{itemize}
+
+\section*{Oppgave 2}
+For å regne oss om fra en temperatur oppgitt i grader Celsius $C$, til grader oppgitt i Fahrenheit $F$, bruker vi formelen
+$$F = \frac{9}{5}C + 32.$$
+\begin{itemize}
+    \item[(a)] Lag et skript som regner ut temperaturen i Fahrenheit for en gitt temperatur i Celsius.
+    \item[(b)] Bruk skriptet til å finne ut hvor mange grader Fahrenheit disse tempraturene er: $20^\circ$, $0^\circ$, $-40^\circ$.
+\end{itemize}
+
+\section*{Oppgave 3}
+\begin{itemize}
+    \item[(a)] Skriv et skript der du lagrer et fornavn og et etternavn. Skriv ut en beskjed til personen.
+    \item[(b)] Skriv også ut antall tegn i fornavnet og etternavnet. For å gjøre dette skal du bruke kommandoen \verb+len(name)+ som gir lengden av en tekststreng, det vil si, antall karakter. For eksempel gir \verb+len("Jonas")+, resultatet 5.
+\end{itemize}
+
+
+
+\end{document}

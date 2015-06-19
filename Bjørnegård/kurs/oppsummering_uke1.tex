@@ -1,0 +1,140 @@
+\documentclass[norsk, 12pt]{beamer}
+% Add handout to documentclass options if wanted
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel,textcomp}
+
+\setlength{\arrayrulewidth}{1.6pt}
+\renewcommand{\arraystretch}{1.2}
+\newlength{\Tcalc}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{epstopdf}
+\usepackage{fancyvrb}
+\usepackage{parskip}
+\usepackage{url}
+\usepackage{listings}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=Matlab,
+basicstyle=\ttfamily
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+morekeywords={super, with},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=2,
+showspaces=false,
+% captionpos=b,
+showstringspaces=false,
+frame=  false,
+breaklines=true}
+
+\setbeamertemplate{frametitle}
+{\begin{centering}\smallskip
+\insertframetitle\par
+\smallskip\end{centering}}
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[text line]{%
+\hfill\strut{%
+\scriptsize\sf\color{black!60}%
+\quad\insertframenumber
+   }%
+    \hfill
+}
+
+% Define some colors:
+\definecolor{DarkFern}{HTML}{407428}
+\definecolor{DarkCharcoal}{HTML}{4D4944}
+\colorlet{Fern}{DarkFern!85!white}
+\colorlet{Charcoal}{DarkCharcoal!85!white}
+\colorlet{LightCharcoal}{Charcoal!50!white}
+\colorlet{AlertColor}{orange!80!black}
+\colorlet{DarkRed}{red!70!black}
+\colorlet{LightBlue}{blue!70!white}
+\colorlet{DarkBlue}{blue!70!black}
+\colorlet{DarkGreen}{green!70!black}
+
+% Use the colors:
+\setbeamercolor{title}{fg=Fern}
+\setbeamercolor{frametitle}{fg=Fern}
+\setbeamercolor{normal text}{fg=Charcoal}
+\setbeamercolor{block title}{fg=black,bg=Fern!25!white}
+\setbeamercolor{block body}{fg=black,bg=Fern!25!white}
+\setbeamercolor{alerted text}{fg=AlertColor}
+\setbeamercolor{itemize item}{fg=Charcoal}
+
+\newcommand{\frn}[1]{\textcolor{Fern}{#1}}
+\newcommand{\alrt}{\color{AlertColor}}
+\newcommand{\bt}[1]{\textbf{#1}}
+\newcommand{\kommando}[1]{\textcolor{AlertColor}{\texttt{\textbackslash #1}}}
+\newcommand{\ds}{\displaystyle}
+
+\title{Oppsummering av uke 1}
+\author{}
+\institute{}
+\date{}
+
+\setbeamertemplate{frametitle}{\vspace{0.5cm} \insertframetitle} 
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{frame}
+\maketitle
+Se \texttt{folk.uio.no/jvbrink} for mer detaljer
+\end{frame}
+
+\begin{frame}
+Å programmere betyr å lage dataprogrammer. Dette gjør vi ved å skrive {\alrt kode} i et bestemt {\alrt programmeringsspråk}. Koden er instrukser til datamaskinen. 
+\vspace{1cm}
+Før vi kan gå igang med å kode må vi ofte bryte opp oppgaven vi skal løse i små biter.
+\end{frame}
+
+\begin{frame}[fragile]
+Datamaskinen husker ting i form av {\alrt variabler}, vi kan opprette variabler ved å gi dem {\alrt navn} og {\alrt innhold}. 
+\vspace{1cm}
+Python gir også variabelen en {\alrt type}, som vi kan sjekke ved å bruke kommandoen \verb+type()+.
+\end{frame}
+	
+\begin{frame}[fragile]
+Vi kan lage {\alrt lister} ved hjelp av firkantparanteser: {\alrt \verb+[+}, {\alrt \verb+]+}. Lister er variabler som inneholder flere ting, de kan inneholde så mange elementer vi vil, av alle slag.
+\vspace{1.5cm}
+Vi kan finne lengden på en liste ved å bruke {\alrt \verb+len()+}. Vi kan også legge til fler elementer med {\alrt \verb+my_list.append()+}. Enkelte elementer kan leses ut eller endres ved {\alrt indeksering}: \verb+my_list[2]+. Husk at indekseringen begynner på 0. Så første element er \verb+my_list[0]+, andre element er \verb+my_list[1]+ og så videre.
+\end{frame}
+	
+\begin{frame}[fragile]
+For å skrive ut noe til terminalen kan vi bruke {\alrt \verb+print+-kommandoen}, vi kan skrive ut både variabler og {\alrt tekststrenger}.
+\vspace{1.5cm}
+Vi kan skrive ut flere ting etterhverandre hvis vi skiller dem med komma: \verb+print ting1, ting2+, eller vi kan skrive ut tekster som vi fyller inn med variabler: {\alrt \verb+print "Hei, jeg heter %s" % name+}.
+\end{frame}
+	
+\begin{frame}[fragile]
+Vi kan spørre brukeren et spørsmål med kommandoen {\alrt \verb+raw_input()+}, i parantesen skriver du spørsmålet som en tekststreng.
+\end{frame}
+	
+\begin{frame}[fragile]
+Det er lett å gjøre feil i programmering, men det gjør ingenting. Når vi kjører et program med feil i, får vi en {\alrt feilmelding} som prøver å fortelle oss hva som har gått galt.
+\end{frame}
+
+
+
+
+\end{document}

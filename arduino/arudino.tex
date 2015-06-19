@@ -1,0 +1,96 @@
+\documentclass[a4paper, 11pt, notitlepage, english]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{amsbsy, amsfonts}
+\usepackage{graphicx, color, xcolor}
+\usepackage{verbatim, listings, fancyvrb}
+\usepackage{parskip}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{flafter}
+\usepackage{simplewick}
+\usepackage{amsthm}
+\usepackage{bbold}
+
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{colon}{. }
+\renewcommand{\captionfont}{\small\sffamily}
+\renewcommand{\captionlabelfont}{\bf\sffamily}
+\usepackage{float}
+%\floatstyle{ruled}
+%\restylefloat{figure}
+\setlength{\captionmargin}{20pt}
+%\addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
+\usepackage{bigstrut}
+\setlength{\tabcolsep}{12pt}
+
+
+\newtheorem{theorem}[]{Wick's Theorem}[]
+
+\DeclareUnicodeCharacter{00A0}{~}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=python,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+morekeywords={super, with},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=2,
+showspaces=false,
+captionpos=b,
+showstringspaces=false,
+frame= single,
+breaklines=true}
+
+\usepackage{geometry}
+\geometry{headheight=0.01mm}
+\geometry{top=20mm, bottom=20mm, left=34mm, right=34mm}
+
+%
+% Navn og tittel
+%
+\author{Simula Research Laboratory \\ Jonas van den Brink \\ \texttt{j.v.brink@fys.uio.no}}
+\title{Elektronikkdesign med Arduino}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\subsection*{Prosjektbeskrivelse}
+Arduino er en open-source elektronikkplattform. Ved hjelp av enkle elektroniske komponenter kan man bygge sammen elektroniske kretser som kan utføre mange forskjellige jobber, selve Arduinoen er en såkallt micro-kontroller, dvs en liten datamaskin, som kan programmeres for å få et dynamisk system. 
+
+Dette prosjektet baserer seg på Arduino og gir en introduksjon til elektroniske kretser og programmering. Deltagerene vil bli utfordret til å bygge en maskin som kan brukes til å finne konsentrasjonen av en saftblanding ved hjelp av lysdioder og optiske sensorer. Kretsen som skal brukes til dette skal designes selv. Arduinoen skal programmeres selv og det eksperimentelle oppsettet som brukes i målingene skal bygges selv.
+
+\subsection*{Aktivitetsplan}
+
+\begin{description}
+	\item[Mandag] $ $\\
+	Introduksjon til Arduino med veileder. Hver gruppe blir tildelt et arduino starter kit og en ekstra introduksjonsmanual.
+	\item[Tirsdag] $ $ \\
+	Hver gruppe arbeider med småprosjekter på Arduino på egenhånd. Kretser skal bygges og arduinoen programmeres, for å oppnå forskjellige mål. Disse prosjektene er godt beskrevet i arduino-manualen. Veileder er ikke til stede, men kan nåes på telefon og mail.
+	\item[Onsdag] $ $ \\
+	Arbeid med eksperimentene med veileder. Kretsen som skal brukes må designes og bygger, arduinoen programmeres og det eksperimentelle oppsettet må settes sammen. Så skal en ukjent prøve analyseres ved hjelp av kretsen som er bygget.	
+\end{description}
+
+
+
+
+\end{document}

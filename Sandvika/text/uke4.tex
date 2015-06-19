@@ -1,0 +1,183 @@
+
+\documentclass[a4paper, 11pt, notitlepage, english]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{amsbsy, amsfonts}
+\usepackage{graphicx, color}
+\usepackage{parskip}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{flafter}
+\usepackage{caption}
+
+%\DeclareCaptionLabelSeparator{colon}{. }
+\renewcommand{\captionfont}{\sffamily}
+\renewcommand{\captionlabelfont}{\bf\sffamily}
+\setlength{\captionmargin}{20pt}
+
+\usepackage{geometry}
+\geometry{headheight=0.01mm}
+\geometry{top=24mm, bottom=29mm, left=39mm, right=39mm}
+
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{10pt}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+%
+% Parametere for inkludering av kode fra fil
+%
+\usepackage{listings}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=python,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+captionpos=b,
+showstringspaces=false,
+frame= single,
+breaklines=true}
+%
+% Definering av egne kommandoer og miljøer
+%
+
+\newcommand{\bt}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\textsf{\textbf{#1}}}
+\newcommand{\I}{\boldsymbol{\mathcal{I}}}
+\newcommand{\p}{\partial}
+\renewcommand{\d}{\text{d}}
+%
+% Navn og tittel
+%
+\author{Jonas van den Brink \\ \texttt{j.v.d.brink@fys.uio.no}}
+\title{Introduksjon til vitenskapelig programmering \\ Uke 4 \\ Sandvika vgs}
+
+\begin{document}
+\maketitle
+
+Vi er nå klare for å trekke sammen alle trådene vi har sett på så langt og begynne å lage et program som løser bevegelsesligningene for fallskjermhopping og strikkhopp. Vi starter med litt repetisjon av fysikken, og så ser vi på hvordan vi skal implementere det på datamaskin.
+
+
+\section*{Kreftene}
+
+
+Et fallskjermhopp består hovedsakelig av to deler. Den første delen er det som skjer før fallskjerm er utløst, denne delen kalles gjerne \emph{fritt fall}. Etter dette utløser hopperen fallskjermen som da drastisk reduserer fallhastigheten. I begge faser utsettes hopperen bare for to krefer, tyngdekraft og luftmotstand. Så vi har
+$$\sum F = F_G + F_D,$$
+der $F_G$ er tyngdekraften og $F_D$ er luftmotstand. Dere har sikkert kjennskap til at tyngdekraften er gitt ved
+$F_G = mg,$
+der $m$ er den totale massen til hopperen, som vil se personvekten og alt utstyret, og $g$ er tyngdens akselersjonskonstant.  En fallskjermhopper vil falle med veldig høy hastighet, og vi bruker derfor en kvadratisk form på luftmotstanden, som vi kan skrive som følger
+$$F_D = \frac{1}{2}\rho C A v^2,$$
+her er $\rho$ tettheten til luft, $C$ er luftmotstandskoeffisienten som avhenger av formen på objektet som faller og $A$ er frontarealet.
+
+Det eneste som endrer seg når fallskjerm løses ut, er frontarealet $A$, og luftmotstandskoeffisienten $C$. Ellers er fysikken helt lik.
+
+\subsection*{Parametere}
+Tallene $m$, $g$, $\rho$, $C$, $A$ er det som kalles fysiske parametere, og det er størrelser vi velger - vi velger dem utifra hva slags simulering vi ønsker å gjøre, men vi regner dem altså generelt sett som kjent. I vår simulering kan vi bruke følgende parametere
+\begin{center}
+\begin{tabular}{c|c}
+Fritt Fall \\ \hline
+$m$ & 90 kg \\ \hline
+$g$ & 9.81 m/s$^2$ \\ \hline
+$\rho$ & 1 kg/m$^3$\\ \hline
+$C$ & 1.4 \\ \hline
+$A$ & 0.7 m$^2$\\ \hline \hline
+Under fallskjerm \\ \hline
+$C_{\rm p}$ & 1.8 \\ \hline
+$A_{\rm p}$ & 44 m$^2$
+\end{tabular}
+\end{center}
+
+\subsection*{Newtons 2.\ lov}
+
+Om vi bruker Newtons 2.\ lov sammen våre kraftlover får vi et uttrykk fra akselerasjonen til fallskjermhopperen. Vi har:
+$$\sum F = ma,$$
+setter vi inn kreftene får vi
+$$F_g + F_d = ma,$$
+da har vi
+$$mg - \frac{1}{2}\rho C A v^2 = ma,$$
+vi deler på $m$ for å få et uttrykk for $a$:
+$$a = g - \frac{1}{2m}\rho C A v^2.$$
+Vi ser at akselerasjonen avhenger av hastigheten, så vi kan skrive den som en funksjon av $v$:
+$$a(v) = g - \frac{1}{2m}\rho C A v^2.$$
+
+\section*{Oppgave - Regne ut terminalhastigheten}
+Terminalhastigheten er den raskeste hastigheten et objekt kan falle med. Regn ut terminalhastigheten for fallskjermhopperen vi ser på. \\ 
+\textbf{Hint:} Ved terminalhastigheten faller man med konstant hastighet, da vet vi at akselerasjonen er null. Hva betyr dette med tanke på Newtons 2.\ lov?
+
+\clearpage
+
+\section*{Fremgangsmåte for å finne hastigheten til hopperen}
+Vi vet at dersom vi har en konstant akselerasjon, og en starthastighet $v_0$ så kan vi regne ut hastigheten ved en hvilken som helst tid $t$ utifra:
+$$v(t) = v_0 + at, \qquad \mbox{for konstant } a.$$
+Så hva gjør vi når vi \emph{ikke} har en konstant akselerasjon? I vårt tilfelle vil akselerasjonen endre seg over tid, fordi hastigheten endrer seg over tid. Men over en veldig kort tid $\Delta t$, så kan vi si at den er så godt som konstant, vi kan da si at
+$$v_1 = v_0 + a(v_0) \Delta t.$$
+Der $v_0$ er starthastigheten, $v_1$ er hastigheten etter ett \emph{tidssteg}, 
+altsa ved tiden $t_1 = \Delta t$.
+Vi skriver $a(t_0)$ for å tydliggjøre at vi bruker akselerasjonen som gjelder
+ ved starttiden. Siden vi nå kjenner $v_1$, så kan vi regne ut $a(v_1)$ fra uttrykket vårt for akselerasjonen, og bruke denne til å gå et tidssteg til:
+$$v_2 = v_1 + a(v_1) \Delta t.$$
+Og slik kan vi fortsette, vi kan alltid regne oss ett tidssteg frem, ved å bruke resultatet fra forrige tidssteg
+$$v_{n+1} = v_n + a(v_n)\Delta t,$$
+for $n=0,1,2,3,\ldots$.
+
+Slik fortsetter vi til vi har simulert nok tidssteg til å nå en slutttid vi har valgt på forhånd. Vi ønsker gjerne at $\Delta t$ skal være minst mulig, slik at vi får et mer nøyaktig resultat. For eksempel kan vi bruke $\Delta t = 0.01$ s i vår simulering, altså tar vi skritt på ett hundredelssekund frem i tid av gangen. I et vanlig fallskjermhopp er hopperen ca.\ 1 minutt i fritt fall, så vi lar sluttiden være $T=60$ sekunder. Det betyr at vi trenger å ta totalt
+$$n = \frac{T}{dt} = \frac{60 \mbox{ s}}{0.01 \mbox{ s}} = 6000,$$
+tidssteg.
+
+\clearpage 
+
+\section*{På tide å programmere}
+
+Vi er nå klare for å sette igang, her er malen på programmet dere kommer til å skrive:
+\begin{itemize}
+    \item[1] Importer pylab, det er alt vi kommer til å trenge.
+    \item[2] Skriv inn alle parameterene vi trenger, det vil si $m$, $g$, $\rho$, $A$, $C$, $A_{p}$, $C_{\rm p}$, $v_0$.
+    \item[3] Definer akselerasjonen som en funksjon av hastigheten. \\
+    \textbf{Hint:} \verb+def a(v):+, og husk å returnere noe!
+    \item[4] Definer $\Delta t = 0.01$ (Hint: kall variablen \verb+dt+ i programmet ditt), $T=60$ og $n = T/dt$
+    \item[5] Opprett to \emph{arrays}, ett for hastigheten $v$ og et for tiden $t$. Vi vil at de skal være tomme, og ha plass til $n+1$ elementer, så bruk \verb+zeros+ kommandoen. Merk at nå vil \verb+v[i]+ i programmet ditt svare til $v_i$ i matematikken.
+    \item[6] Lag en \verb+for+-løkke som går over $i=0,1,2,\ldots,n$. (Hint, bruk \verb+range+.)
+    \item[7] Inne i løkka, regn ut $v[i+1]$ fra $v[i]$ ved å bruke formelen vi har funnet. Oppdater også tiden (Hint: \verb!t[i+1] = t[i] + dt!).
+    \item[8] Plot resultatet for å sjekke at alt har blitt gjort riktig (Hint: \verb+plot(t,v)+).
+\end{itemize}
+
+\section*{Oppgaver}
+Etter at du har fått programmet ditt til å funke kan du besvare følgende oppgaver
+\begin{itemize}
+    \item[a)] Pynt på plottet ved å lagge til navn på aksene (\verb+xlabel+ og \verb+ylabel+), et grid (\verb+grid()+) og eventuelt tittel og lignende.
+    \item[b)] Hvor lang tid tar det før falleren har nådd tilnærmet terminalhastighet? Les av plottet.
+    \item[c)] Skriv ut terminalhastigheten hopperen får i programmet ditt. Hint: Det er en funksjon \verb+max+, som henter ut det største elementet i et array. Sammenlign denne med terminalhastigheten du fant med penn og papir tidligere, hvor like blir verdiene? Ser det ut som programmet ditt regner riktig?
+\end{itemize}
+
+\clearpage
+
+\section*{Videre}
+Nå har vi laget et program, som finner hastigheten til hopperen under fritt fall med luftmotstand. Men vi må fortsatt legge til at fallskjerm utløses. Vi kommer til å se på dette i fellesskap neste gang, men de av dere som har fått til alt så langt, kan begynne å bryne dere på hvordan vi skal gjøre dette. Grunnidéen er ihvertfall denne: det er bare frontarealet $A$ og luftmotstandskoeffisienten $C$ som endrer seg når fallskjerm løses ut, så hvis vi greier å endre disse verdiene i programmet vårt til riktig tidspunkt, så simulerer vi effektivt at fallskjerm er løst ut. I løkka vår, så har vi tiden $t_i$, så kanskje vi greier å bruke en \verb+if+-test til å endre $A$ og $C$ til riktig tid?
+
+Neste gang kommer vi også til å regne ut og plotte $g$-kreftene fallskjermhopperen opplever. Vi kommer også til å finne hastigheten til en strikkhopper på samme måte som vi har gjort for fallskjermhopperen idag.
+
+\end{document}

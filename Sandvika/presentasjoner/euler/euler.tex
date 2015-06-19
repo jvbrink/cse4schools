@@ -1,0 +1,277 @@
+\documentclass[english, 12pt]{beamer}
+% Add handout to documentclass options if wanted
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel,textcomp}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{epstopdf}
+\usepackage{fancyvrb}
+\usepackage{parskip}
+\usepackage{url}
+\usepackage{listings}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=python,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\color{javapurple},%\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+% numbers=left,
+% numberstyle=\tiny\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+captionpos=b,
+showstringspaces=false,
+frame= single,
+breaklines=true}
+
+
+\setlength{\arrayrulewidth}{1.6pt}
+\renewcommand{\arraystretch}{1.2}
+\newlength{\Tcalc}
+
+
+\setbeamertemplate{frametitle}
+{\begin{centering}\smallskip
+\insertframetitle\par
+\smallskip\end{centering}}
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[text line]{%
+\hfill\strut{%
+\scriptsize\sf\color{black!60}%
+\quad\insertframenumber
+   }%
+    \hfill
+}
+
+% Define some colors:
+\definecolor{DarkFern}{HTML}{407428}
+\definecolor{DarkCharcoal}{HTML}{4D4944}
+\colorlet{Fern}{DarkFern!85!white}
+\colorlet{Charcoal}{DarkCharcoal!85!white}
+\colorlet{LightCharcoal}{Charcoal!50!white}
+\colorlet{AlertColor}{orange!70!black}
+\colorlet{DarkRed}{red!70!black}
+\colorlet{LightBlue}{blue!70!white}
+\colorlet{DarkBlue}{blue!70!black}
+\colorlet{DarkGreen}{green!70!black}
+
+% Use the colors:
+\setbeamercolor{title}{fg=Fern}
+\setbeamercolor{frametitle}{fg=Fern}
+\setbeamercolor{normal text}{fg=Charcoal}
+\setbeamercolor{block title}{fg=black,bg=Fern!25!white}
+\setbeamercolor{block body}{fg=black,bg=Fern!25!white}
+\setbeamercolor{alerted text}{fg=AlertColor}
+\setbeamercolor{itemize item}{fg=Charcoal}
+
+\newcommand{\frn}[1]{\textcolor{Fern}{#1}}
+\newcommand{\alrt}{\color{AlertColor}}
+\newcommand{\bt}[1]{\textbf{#1}}
+\newcommand{\kommando}[1]{\textcolor{AlertColor}{\texttt{\textbackslash #1}}}
+\newcommand{\ds}{\displaystyle}
+
+\renewcommand{\d}{\textrm{d}}
+
+\title{Programmeringsprosjekt Sandvika \\ {\small En introduksjon til numeriske beregninger}}
+\author{Jonas van den Brink \\ \texttt{j.v.brink@fys.uio.no}}
+\institute{\alrt Simula Research Laboratory \\ Oslo, Norway}
+
+\setbeamertemplate{frametitle}{\vspace{0.5cm} \insertframetitle} 
+
+\begin{document}
+\pagestyle{empty}
+
+
+\begin{frame}[fragile]
+\begin{center}
+{\Huge \color{DarkFern} Eulers Metode}
+
+\vspace{1cm}
+
+En metode for å løse differensialligninger
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Målet er å finne hastighet og posisjon, $\alrt v(t)$, $\alrt x(t)$, som funksjoner av tid}
+
+Hvis akselerasjonen er konstant, så er dette enkelt:
+\begin{align*}
+\alrt v(t) &\alrt= v_0 + at, \\
+\alrt x(t) &\alrt= x_0 + v_0t + \frac{1}{2}at^2.
+\end{align*}
+
+Problemet er nå at akselerasjonen ikke alltid er konstant.
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+{\Huge \color{DarkFern} Hovedidéen}
+
+\vspace{1cm}
+
+Akselerasjonen vil alltid være tilnærmet konstant \\ hvis vi bare ser på et kort nok tidsintervall
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vi finner bevegelsen ved å regne oss fremover i tid, et lite steg i tid av gangen}
+
+Introduserer et lite tidssteg, $\alrt \Delta t$. 
+
+\visible<2-> {
+Akselerasjonen endrer seg gjennom bevegelsen, så vi kaller akselerasjonen ved start for $\alrt a_0$.
+}
+
+\visible<3-> {	
+Hvis $\alrt \Delta t$ er liten nok får vi
+\begin{align*}
+\alrt v(\Delta t) &\alrt= v_0 + a_0 \cdot \Delta t, \\
+\alrt x(\Delta t) &\alrt= x_0 + v_0\Delta t + \frac{1}{2}a_0 \cdot \Delta t^2.
+\end{align*}
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vi finner bevegelsen ved å regne oss fremover i tid, et lite steg i tid av gangen}
+
+Vi kan nå bruke $\alrt v(\Delta t)$ og $\alrt x(\Delta t)$ til å finne en ``ny'' akeselerasjon, siden $\alrt a(\Delta t) = F(\Delta x, \Delta v, \Delta t)/m$. 
+
+\visible<2-> {
+Vi kan bruke den nye akselerasjonen $\alrt a(\Delta t)$ til å regne oss enda et steg fremover i tid
+\begin{align*}
+\alrt v(2\Delta t) &\alrt= v(\Delta t) + a(\Delta t) \cdot \Delta t, \\
+\alrt x(2\Delta t) &\alrt= x(\Delta t) + v(\Delta t)  + \frac{1}{2}a(\Delta t) \cdot \Delta t^2.
+\end{align*}
+}
+
+\visible<3-> {
+Og dette kan vi fortstette med så lenge vi vil.
+}
+\end{frame}
+
+\begin{frame}[fragile]
+For hvert steg vi tar, beveger vi oss $\alrt \Delta t$ frem i tid. Vi ser altså bare på tidspunktene
+$$\alrt t = 0, \Delta t, 2\Delta t, 3\Delta t, \ldots$$
+
+\visible<2-> {	
+La oss navngi disse som følger
+$$\alrt t_i \equiv i\Delta t$$
+Da blir
+\begin{align*}
+\alrt t_0 &\alrt= 0, \\
+\alrt t_1 &\alrt= \Delta t, \\
+\alrt t_2 &\alrt= 2\Delta t, \\
+& \, \ \alrt \vdots
+\end{align*}
+}
+\end{frame}
+
+\begin{frame}
+Vi navngir $\alrt v$ og $\alrt x$ på samme måte
+$$\alrt v_i \equiv v(t_i), \qquad \alrt x_i \equiv x(t_i).$$
+
+\visible<2-> {	
+Slik at
+\begin{align*}
+\alrt v_0 &\alrt= v(t_0) = v(0) \\
+\alrt v_1 &\alrt= v(t_1) = v(\Delta t) \\
+\alrt v_2 &\alrt= v(t_2) = v(2\Delta t) \\
+&\alrt\quad\vdots
+\end{align*}
+\begin{align*}
+\alrt x_0 &\alrt= x(t_0) = x(0) \\
+\alrt x_1 &\alrt= x(t_1) = x(\Delta t) \\
+\alrt x_2 &\alrt= x(t_2) = x(2\Delta t) \\
+&\alrt\quad\vdots
+\end{align*}
+}
+\end{frame}
+
+\begin{frame}
+Vi kan da skrive bevegelsesligningene som
+\begin{align*}
+\alrt v_{i+1} &\alrt  = v_i + a_i\cdot \Delta t, \\
+\alrt x_{i+1} &\alrt = x_i + v_i\cdot \Delta t + \frac{1}{2}a_i\cdot \Delta t^2, 
+\end{align*}
+
+Der vi finner akselerasjonen $a_i$ fra $\alrt F(x_i, v_i, t_i)/m$.
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstory0}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstory1}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstory2}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstory3}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstory4}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{eulersstoryN}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Algoritme for Eulers metode}
+for $i=0,1,2,3,\ldots, N-1$:
+\begin{enumerate}
+	\item Bruk de forrige resultatene $x_i$ og $v_i$ for å regne ut akselerasjonen: $\alrt a_i = F(x_i, v_i, t_i)/m$.
+	\item Regn ut den nye farten: $\alrt v_{i+1} = v_i + a_i\Delta t$.
+	\item Regn ut den nye posisjonen: $\alrt x_{i+1} = x_i + v_i\Delta t + \frac{1}{2}a_i\Delta t^2$.
+\end{enumerate}
+\visible<2-> {
+$$\Downarrow$$
+
+\lstinputlisting{lsteuler.py}
+$$\alrt t_i \Rightarrow \texttt{t[i]} \qquad  v_i \Rightarrow \texttt{v[i]} \qquad  r_i  \Rightarrow \texttt{r[i]}$$
+}
+
+\end{frame}
+
+
+\end{document}

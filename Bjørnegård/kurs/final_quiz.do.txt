@@ -1,0 +1,96 @@
+TITLE: Class
+AUTHOR: HPL
+DATE: todayz
+
+!bquiz
+Q: Hvilke av følgende er IKKE et programmeringsspråk?
+
+Cw: Python
+Cw: C++
+Cw: Java
+Cr: 
+!equiz
+
+!bquiz
+Q: Hvilken kodelinje gir feilmelding?
+
+Cw: `raw_input(Hva er navnet ditt?)`
+Cw: `print "Hello, world!"`
+Cw: `name = "Lucy"`
+Cr: `print 2**2`
+!equiz
+
+!bquiz
+Q: Hvordan importerer vi funksjonen `randint`?
+
+Cw: `import randint`
+Cr: `from random import randint`
+Cw: `from randint import random`
+Cw: `import random`
+
+!bquiz
+Q: Hvilket nøkkelord hører til funksjoner?
+
+Cw: `if`
+Cw: `append`
+Cw: `while`
+Cr: `def`
+!equiz
+
+!bquiz
+Q: Hvilke to typer løkker har vi?
+
+Cw: `for og if`
+Cw: `if og while`
+Cw: `while og for`
+Cr: `lister og while`
+!equiz
+
+!bquiz
+Q: Hvilken av disse kodelinjene lager en liste med tallene fra og med 1 til og med 5?
+
+Cw: `range(0,5)`
+Cw: `range(0,6)`
+Cw: `range(1,5)`
+Cr: `range(1,6)`
+!equiz
+
+!bquiz
+Q: Hvis du vil gjenta kode mange ganger, hva må du bruke?
+
+Cw: En variabel
+Cw: En test
+Cw: En løkke
+Cr: En feilmelding
+!equiz
+
+!bquiz
+Q: Hvilken av følgende utrykk vil i Python gi `True`?
+
+Cw: `2 = 2`
+Cw: `3 >= 4`
+Cw: `3 == "3"`
+Cr: `3 == 2+1`
+!equiz
+
+!bquiz
+Q: Hvilken av følgende utrykk vil i Python gi `True`?
+
+Cw: `False`
+Cw: `False and True`
+Cw: `False or True`
+Cr: `not True`
+!equiz
+
+!bquiz
+Q: Hvordan lager vi en tom liste?
+
+Cw: `a = `
+Cw: `a = ()
+Cw: `a = empty list`
+Cr: `a = []`
+!equiz
+
+
+
+
