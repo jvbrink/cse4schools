@@ -1,0 +1,21 @@
+Enkrypson
+
+- Historisk enkrypsjon (Cæsar-skifer)
+- Moderne enkrypsjon (Asymetrisk)
+
+M = a*b-1
+e = a1*M+a
+d = b1*M+b
+n = (e*d-1)/M
+
+public = (d,n)
+private = (e,n)
+
+
+
+
+Schemes
+
+Ceasar for hånd
+Ceasar på data
+Ceasar med ASCII
