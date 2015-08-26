@@ -1,9 +1,23 @@
 
+.. raw:: html
+
+   <h1>
+
 Workshop: Projectile Motion
-===========================
+
+.. raw:: html
+
+   </h1>
+
+.. raw:: html
+
+   <h2>
 
 An introduction to computing trajectories
-=========================================
+
+.. raw:: html
+
+   </h2>
 
 This workshop focuses on introducing computations to introductory
 physics. Introducing computations should lead to a sense of empowerment
@@ -12,7 +26,7 @@ problems 2. Be shown to be a powerful tool 3. Be understandable.
 Students should write their own code
 
 **The goal is to find the velocity and position of an object as
-functions of time: :math:`\mathbf{\vec{v}(t), \vec{r}(t) }`**
+functions of time:** :math:`\mathbf{\vec{v}(t), \vec{r}(t) }`
 |cannonball| Equations of motion:
 
 .. math::  \frac{d \vec{r}}{d t} = \vec{v}(t), \qquad \frac{d \vec{v}}{d t} = \vec{a}(t)
@@ -34,11 +48,25 @@ system. 2. Use Newtons 2. law to find the acceleration 3. Calculate ~
 v(t) and~ r(t) by solving the equations of motion In this workshop, we
 will solve step number 3 numerically, using the Euler method.
 
+.. raw:: html
+
+   <h2>
+
 The Euler Method
-================
+
+.. raw:: html
+
+   </h2>
+
+.. raw:: html
+
+   <h3>
 
 A method for solving ordinary differential equations (ODEs)
------------------------------------------------------------
+
+.. raw:: html
+
+   </h3>
 
 We can solve the equations of motion numerically using the Euler method
 From the definition of the derivative
@@ -62,8 +90,15 @@ If :math:`a(t)` and :math:`v(t)` are known, we can calculate
 
 .. |plot of eulers method| image:: figs\eulers0.svg
 
+.. raw:: html
+
+   <h3>
+
 Our functions are no longer continuous, they have become discretized
-====================================================================
+
+.. raw:: html
+
+   </h3>
 
 We only focus on multiples of our time-step
 
@@ -88,8 +123,15 @@ Introduce the shorthand
 
    time discretization
 
+.. raw:: html
+
+   <h3>
+
 We solve the equations of motion iteratively
-============================================
+
+.. raw:: html
+
+   </h3>
 
 .. math::  v_{i+1} = v_i + a_i\cdot\Delta t
 
@@ -104,20 +146,41 @@ and :math:`r_0`, until we have reached our end-time :math:`t_N`
 
 .. math::  i = 0,1,2,3,\ldots, N.
 
+.. raw:: html
+
+   <h3>
+
 Algorithm for the Euler method
-==============================
+
+.. raw:: html
+
+   </h3>
 
 for :math:`i=0,1,2,3,\ldots, N-1`: 1. Use the previous results
 :math:`x_i` and :math:`v_i` to compute the acceleration: $ a\_i =
 F(x\_i, v\_i, t\_i)/m$. 2. Compute the new velocity: $ v\_{i+1} = v\_i +
 a\_i:raw-latex:`\Delta `t$. 3. Compute the new position: $ r\_{i+1} =
 r\_i + v\_i:raw-latex:`\Delta `t$.
+
+.. raw:: html
+
+   <h2>
 
 Implementation
-==============
+
+.. raw:: html
+
+   </h2>
+
+.. raw:: html
+
+   <h3>
 
 Moving from physics and math to actual computer code
-----------------------------------------------------
+
+.. raw:: html
+
+   </h3>
 
 for :math:`i=0,1,2,3,\ldots, N-1`: 1. Use the previous results
 :math:`x_i` and :math:`v_i` to compute the acceleration: $ a\_i =
@@ -125,7 +188,7 @@ F(x\_i, v\_i, t\_i)/m$. 2. Compute the new velocity: $ v\_{i+1} = v\_i +
 a\_i:raw-latex:`\Delta `t$. 3. Compute the new position: $ r\_{i+1} =
 r\_i + v\_i:raw-latex:`\Delta `t$.
 
-.. sagecellserver:: python
+.. code:: python
 
     for i in range(N):
     	a[i] = F(r[i], v[i], t[i])/m
@@ -137,12 +200,19 @@ we write on paper
 
 .. math::  t_i \Rightarrow \texttt{t[i]} \qquad  v_i \Rightarrow \texttt{v[i]} \qquad  r_i  \Rightarrow \texttt{r[i]}
 
+.. raw:: html
+
+   <h3>
+
 We also need various pieces of bookkeeping code
-===============================================
+
+.. raw:: html
+
+   </h3>
 
 Here we define the arrays we will be using
 
-.. sagecellserver:: python
+.. code:: python
 
     #Import various functions meant for numerical science
     import numpy as np 
@@ -169,7 +239,7 @@ Here we define the arrays we will be using
 Here we define the physical constants for our system and the function
 that describes the forces
 
-.. sagecellserver:: python
+.. code:: python
 
     m = 5.5 # mass, kg
     g = 9.81 # acceleration of gravity, m/s^2
@@ -188,7 +258,7 @@ through the air
 As soon as we have solved the equations of motion, we can plot the
 result
 
-.. sagecellserver:: python
+.. code:: python
 
     # Solving equations of motion iteratively
     for i in range(N):
@@ -226,8 +296,15 @@ result
 
    plot\_cannonball1
 
+.. raw:: html
+
+   <h3>
+
 Numerical Experimentation
-=========================
+
+.. raw:: html
+
+   </h3>
 
 Altering parameters lets us immediately see the consequences
 
@@ -236,8 +313,16 @@ Altering parameters lets us immediately see the consequences
 .. |plot\_cannonball2| image:: figs\plot_cannonball2.svg
 .. |plot\_cannonball3| image:: figs\plot_cannonball3.svg
 
-Students can use numerical experimentation to build intuition and knowledge
-===========================================================================
+.. raw:: html
+
+   <h3>
+
+Students can use numerical experimentation to build intuition and
+knowledge
+
+.. raw:: html
+
+   </h3>
 
 -  Numerical results can be compared to known analytical solutions. Are
    numerical results trustworthy?
@@ -246,18 +331,43 @@ Students can use numerical experimentation to build intuition and knowledge
 -  Can look at systems with and without certain contributions, such as
    air drag. What is important, and what can be ignored?
 
-Examples of possible projects
-=============================
+.. raw:: html
 
-You will have a chance to look at some of these today ###Catapults and
-cannons and sports such as baseball \* Easy to compare with experimental
-data, either before or after simulation. \* Can look into studies of air
-drag, Reynolds number etc. |cannonball|
+   <h2>
+
+Examples of possible projects
+
+.. raw:: html
+
+   </h2>
+
+You will have a chance to look at some of these today
+
+.. raw:: html
+
+   <h3>
+
+Catapults and cannons and sports such as baseball
+
+.. raw:: html
+
+   </h3>
+
+-  Easy to compare with experimental data, either before or after
+   simulation.
+-  Can look into studies of air drag, Reynolds number etc. |cannonball|
 
 .. |cannonball| image:: figs\cannonball.svg
 
+.. raw:: html
+
+   <h3>
+
 Skydiving and bungee jumping
-============================
+
+.. raw:: html
+
+   </h3>
 
 -  Great study on free fall and terminal velocity
 -  Can study how parameters such as cross-sectional area and drag
@@ -265,18 +375,35 @@ Skydiving and bungee jumping
 -  Can plot the g-forces affecting the jumper. Which sport is more
    “extreme”?
 
+.. raw:: html
+
+   <h3>
+
 Pendulum and angular motion
-===========================
 
-|pendulum| \* Can solve pendulum problems also for large angles! \*
-Energy can be plotted as functions of time \* Can also simulate double
-pendulum and chaotic systems
+.. raw:: html
 
-.. |pendulum| image:: figs\pendulum.svg
+   </h3>
+
+.. figure:: figs\pendulum.svg
+   :alt: pendulum
+
+   pendulum
+
+-  Can solve pendulum problems also for large angles!
+-  Energy can be plotted as functions of time
+-  Can also simulate double pendulum and chaotic systems
+
+.. raw:: html
+
+   <h3>
 
 Modeling the solar system
-=========================
 
- \* Students can gather real data of planetary orbits from NASA webpages
-\* Can combine numerical simulation with better graphics
+.. raw:: html
+
+   </h3>
+
+-  Students can gather real data of planetary orbits from NASA webpages
+-  Can combine numerical simulation with better graphics
 
