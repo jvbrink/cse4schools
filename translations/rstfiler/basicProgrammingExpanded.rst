@@ -94,7 +94,7 @@ Your first program
 
 Our first program consists of just one line:
 
-.. code:: python
+.. sagecellserver:: python
 
     print "Hello world!"
 
@@ -122,7 +122,7 @@ operators are written as :math:`+, -, *,` and :math:`/`. In Python
 exponentials are expressed by a double asterisk (:math:`*`\ :math:`*`)
 notation. Lets show some examples:
 
-.. code:: python
+.. sagecellserver:: python
 
     print 2 + 3
     print 2 - 3
@@ -146,7 +146,7 @@ section below about types.
 We can improve the :math:`\verb+print+` command to make the output is
 easier to read:
 
-.. code:: python
+.. sagecellserver:: python
 
     print "2 + 3 = ", 2+3
 
@@ -167,7 +167,7 @@ Variables are names we give in our program so that the computer
 remembers the variable and we can use it later in our program. Here is
 an example
 
-.. code:: python
+.. sagecellserver:: python
 
     name = "Jonas"
     age = 23
@@ -183,7 +183,7 @@ the program. What happened? Nothing, or at least your terminal is empty.
 Python has only created the variables. If you would like to see them you
 can add a :math:`\texttt{print}` command at the end of the program.
 
-.. code:: python
+.. sagecellserver:: python
 
     print name
     print age
@@ -196,7 +196,7 @@ can add a :math:`\texttt{print}` command at the end of the program.
 
 What happens when you run the code below?
 
-.. code:: python
+.. sagecellserver:: python
 
     print 'name'
     print 'age'
@@ -215,7 +215,7 @@ Note that if you try to create two variables with the same name, the
 first variable will be overwritten by the second. So what will happen
 when you run the code below?
 
-.. code:: python
+.. sagecellserver:: python
 
     name = 'Marius'
     name = 'Lise'
@@ -241,7 +241,7 @@ number.
 To check which type a variable has, we can use the command
 :math:`\texttt{type}`. Here is an example:
 
-.. code:: python
+.. sagecellserver:: python
 
     location = 'Oslo'
     year = 2015
@@ -272,7 +272,7 @@ This is because both 2 and 3 have the type 'int' and therefore also the
 result will have the type 'int'. If we use float numbers instead we get
 the expected answer. Here is an example to show the difference:
 
-.. code:: python
+.. sagecellserver:: python
 
     a = 2.0
     b = 3.0
@@ -308,7 +308,7 @@ students in a class? We can create one variable for each student, or we
 can create one variable containing all the students. The latter is
 called a list and here is an example:
 
-.. code:: python
+.. sagecellserver:: python
 
     students = ['Jake', 'John', 'Mary', 'Lucy', 'Alexander']
 Here we have used square brackets to define a list, and within the
@@ -316,7 +316,7 @@ brackets we have written 5 names separated by a comma. Furthermore,
 every name is defined as a string. When you have defined a list you can
 print it and check the type:
 
-.. code:: python
+.. sagecellserver:: python
 
     print students
     print type(students)
@@ -329,7 +329,7 @@ print it and check the type:
 
 You can also check how many elements there are in your list by typing
 
-.. code:: python
+.. sagecellserver:: python
 
     print len(students)
 
@@ -341,28 +341,28 @@ You can also check how many elements there are in your list by typing
 The list :math:`\texttt{students}` contained text, but in general the
 elements in a list can be of any type. Here is a list with numbers:
 
-.. code:: python
+.. sagecellserver:: python
 
     some_numbers = [2, 5.0, 6, 8, 200, 436]
 And here we have a mixture of strings and numbers
 
-.. code:: python
+.. sagecellserver:: python
 
     mixed_list = ["some text", 2, 2.3, 9, "more text"]
 You can even put a list inside another list
 
-.. code:: python
+.. sagecellserver:: python
 
     lists_in_lists = [[0,1,2], ["Mary", "Lucy", "Jake"]]
 After we have defined a list such as students
 
-.. code:: python
+.. sagecellserver:: python
 
     students = ['Jake', 'John', 'Mary', 'Lucy', 'Alexander']
 we can access the elements in the list through the index of every
 element:
 
-.. code:: python
+.. sagecellserver:: python
 
     print students[0]
     print students[3]
@@ -383,7 +383,7 @@ If we want to, we can also change the elements within the list. If it
 turns out that we made a mistake and 'Alexander' should be 'Alex', we
 can overwrite the 5th element in the list as follows
 
-.. code:: python
+.. sagecellserver:: python
 
     students[4] = 'Alex'
     print students
@@ -399,7 +399,7 @@ we wanted.
 It is also possible to add elements to the list. For instance if we
 forgot one of the students in the class, you can add her by typing
 
-.. code:: python
+.. sagecellserver:: python
 
     students.append('Karen')
     print students
@@ -415,7 +415,7 @@ In some cases it makes sense to create an empty list and then add
 elements afterwards. Here is a list that is initially empty and then
 filled with numbers
 
-.. code:: python
+.. sagecellserver:: python
 
     growing_list = []
     growing_list.append(1)
@@ -441,7 +441,7 @@ programming.
 
 As an example, let us write a print command with an error on purpose.
 
-.. code:: python
+.. sagecellserver:: python
 
     prnt "Hello, World!"
 
@@ -470,7 +470,7 @@ hundred lines, it is definitely useful to know which line has an error.
 
 Let us try another error
 
-.. code:: python
+.. sagecellserver:: python
 
     location = "Oslo"
     print place
@@ -501,7 +501,7 @@ to use a variable that does not exist.
 
 Let us look at one last error
 
-.. code:: python
+.. sagecellserver:: python
 
     students = ["John", "Jake", "Mary", "Marcus"]
     print students[4]
@@ -534,7 +534,7 @@ More about printing
 So far you have seen how to print both text strings and variables. Now,
 we will look at how to combine them. Consider the following program
 
-.. code:: python
+.. sagecellserver:: python
 
     name = "Silje"
     print "Hello", name, "! How are you today?"
@@ -553,7 +553,7 @@ space between each of the things we print. It looks a bit odd that there
 is a space between 'Silje' and '!', so let us use another way to combine
 a message with a variable.
 
-.. code:: python
+.. sagecellserver:: python
 
     name = "Silje"
     print "Hello %s! How are you today?" % name
@@ -574,7 +574,7 @@ variable we fill with is a string. We can create as many 'holes' in a
 string as we want, and we can even use other variables of other types to
 fill them.
 
-.. code:: python
+.. sagecellserver:: python
 
     name = "Silje"
     age = 18
@@ -603,7 +603,7 @@ created to interact with the user in some way. So, let us ask the user a
 series of questions. We can do this with the command
 :math:`\verb+raw_input+`. Here is an example:
 
-.. code:: python
+.. sagecellserver:: python
 
     weather = raw_input('Hi! How is the weather today?')
     print "The weather seems to be %s today!" % weather
@@ -654,7 +654,7 @@ do, is to explain to the reader what is happening. You can use the
 **#**-symbol to write comments. Everything on the line behind a # will
 be interpreted as a comment. Let us explore some examples
 
-.. code:: python
+.. sagecellserver:: python
 
     # Ask the user for his or her name
     name = raw_input("Hi there, what's your name?")
@@ -675,7 +675,7 @@ what is happening.
 Another usual place to put comments, is at the beginning of a function
 to explain what the function does.
 
-.. code:: python
+.. sagecellserver:: python
 
     def Fahrenheit2Celsius(F):
     	# Converts a temperature from degrees Fahrenheit to degrees Celsius
@@ -685,7 +685,7 @@ If you want a comment to take up multiple lines, you can wrap it in
 triple quotation marks ("""). A good use of this is at the beginning of
 your program, to explain what your program does.
 
-.. code:: python
+.. sagecellserver:: python
 
     """This is a comment 
     that covers 
@@ -713,7 +713,7 @@ You can for example always add empty lines in a program. Python ignores
 empty lines. By creating some space for your program to 'breathe', you
 make your code a lot more readable. Consider the following programs:
 
-.. code:: python
+.. sagecellserver:: python
 
     from math import sqrt
     number=raw_input("Please give me a number!")
@@ -726,7 +726,7 @@ make your code a lot more readable. Consider the following programs:
     The square root of your number is 3
     
 
-.. code:: python
+.. sagecellserver:: python
 
     from math import sqrt
     
@@ -762,13 +762,13 @@ import. So if you, for example, want to use the function
 :math:`\verb+randint+` does in a moment) from the library
 :math:`\verb+random+`, you can write
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
 If you plan to use a lot of different functions from a library, you can
 instead write
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import *
 The star means that we import all functions from a library.
@@ -783,7 +783,7 @@ are both integers), and returns an integer between :math:`a` and
 :math:`b` (including :math:`a` and :math:`b`). Here is a simple program
 that rolls a common six sided die
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
     
@@ -803,7 +803,7 @@ you will see that the result is random each time.
 We can, of course, give different arguments to :math:`\verb+randint+` to
 simulate lots of different 'dice'
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
     
@@ -828,7 +828,7 @@ In this program, we use :math:`\verb+randint+` in three different ways.
 Some other functions from random are created to be used with lists.
 Shuffle, for example, shuffles the elements in a list.
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import shuffle
     
@@ -845,7 +845,7 @@ Shuffle, for example, shuffles the elements in a list.
 The function :math:`\verb+choice+` draws a random element from a list.
 As an example we can use :math:`\verb+choice+` to simulate a lottery.
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import choice
     
@@ -868,7 +868,7 @@ in a deck of cards by a string of two letters, where the first letter is
 the suit and the second is the symbol. For example six of spade becomes
 's6' and queen of clubs becomes 'cQ'.
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import shuffle
     
@@ -900,7 +900,7 @@ Let me show you some quick ways to manipulate the deck. If you have a
 list, you can use :math:`\verb+.pop()+` to remove the last element in
 the list. This represents drawing a card from the deck.
 
-.. code:: python
+.. sagecellserver:: python
 
     print len(deck)
     print deck.pop()
@@ -920,7 +920,7 @@ actually removes the card from the list, just like when you draw a card
 from a deck. Let us draw a hand of 5 cards. We will use another list to
 represent the hand.
 
-.. code:: python
+.. sagecellserver:: python
 
     # Make an empty list for our hand, so we have somewhere to put our cards
     hand = []
@@ -957,7 +957,7 @@ A for-loop repeats a piece of code for every element in a list. Again we
 use the list with students. Now we want to print the names and how many
 characters each name has:
 
-.. code:: python
+.. sagecellserver:: python
 
     students = ["Mary", "James", "Siri" , "Alexander", "Elizabeth"]
     
@@ -996,7 +996,7 @@ you will get used to it.
 
 Here is another example where we are adding the numbers from 1 to 10:
 
-.. code:: python
+.. sagecellserver:: python
 
     s = 0
     for i in [1,2,3,4,5,6,7,8,9,10]:
@@ -1016,7 +1016,7 @@ for you. Range takes two arguments (:math:`\texttt{range(start, stop)}`)
 and returns a list of numbers (integers) from start to stop. Here are
 two examples:
 
-.. code:: python
+.. sagecellserver:: python
 
     print range(1, 10)
     print range(2,8)
@@ -1031,7 +1031,7 @@ Note that the last number is not included! We may also add a third
 argument, this argument tells us how large the step between the numbers
 should be. Here are a few examples:
 
-.. code:: python
+.. sagecellserver:: python
 
     print range(1, 10, 1)
     print range(1, 10, 2)
@@ -1046,7 +1046,7 @@ should be. Here are a few examples:
 
 :math:`\texttt{range}` is very useful in our :math:`\texttt{for}` loop
 
-.. code:: python
+.. sagecellserver:: python
 
     s = 0
     for i in range(1, 1000,1):
@@ -1066,7 +1066,7 @@ Sometimes you want your program to do different things based on a
 if a number equals 0? To do this, we need something known as an
 :math:`\verb+if+` test. Let us look at an example:
 
-.. code:: python
+.. sagecellserver:: python
 
     number = 1
     
@@ -1083,7 +1083,7 @@ variable :math:`\verb+number+`.
 
 As you can tell the basic structure of an if/else test is as follows:
 
-.. code:: python
+.. sagecellserver:: python
 
     if condition:
     	do some things
@@ -1092,7 +1092,7 @@ As you can tell the basic structure of an if/else test is as follows:
 You do not always need an :math:`\verb+else+` block, maybe you just want
 to write a message if the number equals 0, and do nothing otherwise.
 
-.. code:: python
+.. sagecellserver:: python
 
     if number == 0:
     	print "The number equals zero!"
@@ -1108,7 +1108,7 @@ condition to the screen
 
    if else diagrams
 
-.. code:: python
+.. sagecellserver:: python
 
     print 7 > 5
     print 7 >= 7
@@ -1127,7 +1127,7 @@ Play around, try various combinations, and guess the result!
 
 You can add more conditions with the :math:`\verb+elif+` command
 
-.. code:: python
+.. sagecellserver:: python
 
     number = -1
     if number == 0:
@@ -1166,7 +1166,7 @@ Let us look at an example that shows the difference between
 where you roll a die. If you get six, you win. If not, you loose. First
 we will create this game with an :math:`\verb+if+` test
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
     
@@ -1192,7 +1192,7 @@ rolled once, and only one message will print to the screen.
 
 Now, let us create the game with a :math:`\verb+while+`-loop instead.
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
     
@@ -1243,7 +1243,7 @@ Let us take a look at another example. This time we will find the number
 of times we have to double a number before it becomes greater that 1
 million
 
-.. code:: python
+.. sagecellserver:: python
 
     i = 0 # number of doublings
     n = 1 
@@ -1288,7 +1288,7 @@ Infinite loops
 with a :math:`\verb+while+` loop it is simple to create an infinite
 loop. Consider the following example **(Do not run this)**
 
-.. code:: python
+.. sagecellserver:: python
 
     from random import randint
     
@@ -1334,7 +1334,7 @@ value of :math:`f(x)` (the output). So you can view the function
 :math:`f`  as a rule, or a machine, that processes a number given by us.
 We can define this function with Python like this:
 
-.. code:: python
+.. sagecellserver:: python
 
     def f(x):
         return x**2 + 3*x + 1    
@@ -1344,7 +1344,7 @@ name :math:`f` that takes a number :math:`x` and returns the number
 :math:`f(x)`. We can now use the function (also known as 'calling' or
 'invoking' the function) like this:
 
-.. code:: python
+.. sagecellserver:: python
 
     print f(2)
     print f(3.5)
@@ -1365,14 +1365,14 @@ define are actually just like a new type of variable.
 A function in python does not need to be mathematical. We can for
 example create a function like this:
 
-.. code:: python
+.. sagecellserver:: python
 
     def greet(name):
         print "Hello " + name + "!"
 This function takes a name as input, that is, a string, and prints a
 greeting as output. We can call it like this
 
-.. code:: python
+.. sagecellserver:: python
 
     greet("Lucy")
 
@@ -1393,7 +1393,7 @@ double of :math:`x`). The difference is that we want :math:`f1` to
 return the result, but we want :math:`f2` to print the result to the
 screen. So the code is:
 
-.. code:: python
+.. sagecellserver:: python
 
     def f1(x):
         return 2*x
@@ -1403,7 +1403,7 @@ screen. So the code is:
 Let us now try to call :math:`f1` and :math:`f2` in different ways and
 attempt to understand exactly what is happening. First we write
 
-.. code:: python
+.. sagecellserver:: python
 
     f1(2)
 
@@ -1422,7 +1422,7 @@ calculates :math:`2*2 = 4` and returns this value, but we don't do
 anything with the value. And so, nothing happens. We could for example
 do this instead:
 
-.. code:: python
+.. sagecellserver:: python
 
     a = f1(2)
     print a
@@ -1438,7 +1438,7 @@ screen. Great!
 
 Let us now try to write
 
-.. code:: python
+.. sagecellserver:: python
 
     f2(3)
 
@@ -1452,7 +1452,7 @@ far so good! This is because we call the function :math:`f2`, and
 :math:`f2` prints the number on the screen. But if we instead try to
 store the result in a variable like so
 
-.. code:: python
+.. sagecellserver:: python
 
     a = f2(3)
     print a
@@ -1492,7 +1492,7 @@ following function
 
 like so
 
-.. code:: python
+.. sagecellserver:: python
 
     def f(x,y):
         return 2*x**2 + x*y + 3
@@ -1508,14 +1508,14 @@ We can even create functions with no arguments at all. This type of
 functions is perhaps more useful when you are programming than when you
 are doing mathematics. Consider this function
 
-.. code:: python
+.. sagecellserver:: python
 
     def greet():
         print "Hey there! I hope you have a great day!"
 Observe that when we invoke a function like this, we still have to use
 parentheses like so
 
-.. code:: python
+.. sagecellserver:: python
 
     greet()
 
@@ -1546,7 +1546,7 @@ do we create an empty array? Because an array never changes it's size,
 we have to define the number of spaces in the array. To do this, we use
 the command :math:`\verb+zeros+`:
 
-.. code:: python
+.. sagecellserver:: python
 
     from pylab import *
     
@@ -1563,7 +1563,7 @@ The variable :math:`x` is now an array with three elements. All the
 elements have the value :math:`0`. This may seem like a strange way to
 do it, but now we can change specific elements by indexing like this
 
-.. code:: python
+.. sagecellserver:: python
 
     x[0] = 10
     x[1] = 4
@@ -1580,7 +1580,7 @@ from 0, so :math:`\verb+x[0]+` is the first element, :math:`\verb+x[1]+`
 is the second element, etc. So if we write :math:`\verb+print x+` we get
 the following
 
-.. code:: python
+.. sagecellserver:: python
 
     print x
 
@@ -1593,7 +1593,7 @@ The second way to create an array involves the function
 :math:`\verb+linspace+`. Linspace is short for *linear spacing*. It
 takes three input numbers: start, stop, and size. Example:
 
-.. code:: python
+.. sagecellserver:: python
 
     x = linspace(0,1,6)
     print x
@@ -1614,7 +1614,7 @@ A great advantage to arrays is that they are made to be used in
 mathematics. For example, they behave exactly like vectors. This means
 that we can use arrays to calculate dot products and cross products.
 
-.. code:: python
+.. sagecellserver:: python
 
     u = array([1,-4,3])
     v = array([3,2,-1])
@@ -1630,13 +1630,13 @@ that we can use arrays to calculate dot products and cross products.
 Another useful feature of arrays is that we can give them as input to
 functions. Consider for example this function which we looked at before
 
-.. code:: python
+.. sagecellserver:: python
 
     def f(x):
         return x**2 + 3*x + 1
 What happens when we call this function with an array?
 
-.. code:: python
+.. sagecellserver:: python
 
     a = array([0,1,2,3,4,5])
     print f(a)
@@ -1659,7 +1659,7 @@ that you are used to from mathematics. To plot, we use the function
 function takes in two lists, or arrays, of numbers as input. Here is a
 simple example
 
-.. code:: python
+.. sagecellserver:: python
 
     %matplotlib inline
     from pylab import plot
@@ -1683,7 +1683,7 @@ If we have defined a function, for example
 
 which we looked at earlier. Then we can write this
 
-.. code:: python
+.. sagecellserver:: python
 
     def f(x):
         return x**2 + 3*x + 1
@@ -1704,7 +1704,7 @@ gives us a nice figure of the function :math:`f(x)`
 We can also create plots of other known mathematical functions, like
 :math:`sin(x)` and :math:`cos(x)`
 
-.. code:: python
+.. sagecellserver:: python
 
     x = linspace(0,2*pi,1000)
     plot(x,sin(x))
@@ -1720,7 +1720,7 @@ call :math:`\verb+show()+`, we can prettify the figure. For example by
 adding labels to the axes with :math:`\verb+xlabel+` and
 :math:`\verb+ylabel+`
 
-.. code:: python
+.. sagecellserver:: python
 
     x = linspace(0,2*pi,1000)
     plot(x,sin(x))
@@ -1733,7 +1733,7 @@ adding labels to the axes with :math:`\verb+xlabel+` and
 .. image:: output_186_0.png
 
 
-.. code:: python
+.. sagecellserver:: python
 
     x = linspace(0,2*pi,1000)
     plot(x,sin(x))
@@ -1753,7 +1753,7 @@ Axis takes a list like this:
 
 If we want to save the figure, we can do so with :math:`\verb+savefig+`
 
-.. code:: python
+.. sagecellserver:: python
 
     x = linspace(0,2*pi,1000)
     plot(x,sin(x))
