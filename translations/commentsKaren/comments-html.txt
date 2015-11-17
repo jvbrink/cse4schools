@@ -1,0 +1,157 @@
+
+
+
+Introduction to programming with Python -expanded
+-------------------------------------------------
+
+*Fjern den originale :)
+
+*Dette er generelt veldig bra og jeg har stort sett bare små
+ kommentarer :)
+
+*Lightbot bilde mangler
+
+*Installation -fjern denne seksjonen (evt skriv en tutorial hvor dere
+ forklarer hvordan dere har gjort dette når dere har holdt kurs.)
+
+*Generell kommentar -bruk "vi" og "oss" istedetfor "jeg" (I) og "meg"
+ -søk gjennom dokumentet.
+
+*Generell kommentar -jeg så for meg at studentene kunne kjøre
+kommandoene feks "Hello world" -regner med at det er Marcin som har
+fjernet dette og etter å ha tenkt meg litt om er det kanskje bra siden
+Sage av og til gir helt annen output enn Python. Derfor foreslår jeg
+at dere erstatter punktet "Installation" med "Before you
+continue"-eller noe i den stilen og henviser studentene til å skrive
+av (evt kopiere) koden de finner i dokumentet og kjøre den via
+nettsiden www.skulpt.org eller en annen side hvis dere vet om noe
+bedre. Fikk ikke plotting til å funke på noen av de sidene jeg fant...
+
+Hvis vi ikke finner noen løsning for plotting -skriv en kommentar om
+det!
+
+Hvis dere ikke gjør dette må vi passe på at teksten ikke impliserer at
+de skal teste ting eller endre ting. Se feks "Variables", "Programs
+.... interacts ...", "comments"
+
+Syns dere fortsatt vi skal la "output" være eller kan vi fjerne det?
+Litt usikker selv!
+
+*Math section -Python med stor P
+
+*Text string skrives som to ord
+
+*Structuring your codes -husk anførselstegn når dere bruker sitater
+
+*Comments -siste linje er annerledes enn ellers hvor dere har "output"
+ i grønne bokser.
+
+*Whitespace -kan man skrive cant? Enten can't eller cannot.
+
+*Rolling a dice -burde ikke det være et underpunkt under "random"? Her
+ er det også lagt opp til interaksjon.
+
+*for loop diagram -skulle det vært en figur her?
+
+*for loop -section -trykkleif: antother
+
+*Dette må jeg ha skrevet selv: "here is to examples" -here are two
+ examples, sant?
+
+*igjen -here is a few examples...jeg er innmari dårlig på is og are så
+ dere finner sikkert flere hvis dere ser etter!
+
+*if/else -igjen forutsettes interaksjon
+
+*while loop -skulle det vært et bilde eller en figur?
+
+*roll a die -tihi! endre til "dice" fant det minst to steder
+ 
+*function blackbox -mangler
+
+*Python med stor bokstav -søk gjennom dokumentet.
+
+*We define two functions, f1 and f2. Kanskje dere kan legge til Let's
+ define...?
+
+*...but we want.... -er det bedre med ....while we would like....
+
+*når f1(2) kjøres er det en grønn rute med 4, men f1 skal ikke printe
+ :)
+
+*f2 mangler kode formatering minst et sted.
+
+*alle bilder mangler på min pc...
+
+*Plotting -forklar %matplotlib inline -import er alt forklart sant?
+
+*Vi bør kanskje også ha et punkt om at dette dokumentet ikke
+ inneholder oppgaver, men at de finnes et annet sted?
+
+Skydiving -part 1
+-----------------
+
+*Begynn med å skrive noe alla "In the introduction tutorial we learned some basics programming skill. You will need what you learned previously and don't hesitate to go back to the previous tutorial if you have forgotten something. Now we are going to look at an example where we investigate how the velocity of a skydiver changes over time...." -dette er kanskje ikke så velformulert, men skjønner dere hva jeg vil fram til? Prøv å sett de forskjellige bitene i en sammenheng.
+
+
+Parachute -code
+---------------
+
+*Endre navn til "Code Skydiving -part 1" eller liknende slik at det er
+ klart at det hører til "Skydiving -part 1"
+
+*Hvis dere har tid kan dere kommentere koden
+
+*Det ser litt rart ut når det er så mange definisjoner uten
+ output. Kanskje dere bare skal samle definisjoner i en rute?
+
+*plotting funker brillefint :)
+
+Workshop: Projectile Motion
+---------------------------
+
+*Her har jeg en del kommentarer så veldig bra om dere bruker litt tid
+ på og forbedre dette. Dere har ikke gjort noe feil det er bare
+ formatet som ble litt rart når det er tatt ut av sin sammenheng. Evt
+ ser det rart ut fordi det skjer noe feil i konverteringen fra rst til
+ html?
+
+*Generell kommentar: Denne tutorialen er basert på en presentasjon
+ -prøv så langt det går å få det til å se ut som slides med lister der
+ det er naturlig osv. Jeg har kommentert på dette nedenfor.
+
+*Nevn i første seksjon at dette er basert på presentasjonen holdt på
+ iCSE4schools workshop i Katowice 29. januar, 2015, og at det var
+ Jonas van den Brink som holdt presentasjonen.
+
+*"An intro..." Det første avsnittet kan komme før overskriften
+
+*"An intro...." Poengene 1., 2. og 3. bør være en liste
+
+*"cannonball" -virker litt tatt ut av sammenhengen
+
+*"Our algorithm...." her er det igjen tre punkter -lag en liste.
+
+*Euler method -linje skift før "From the def..." evt skriv det om så
+ dere får en fullstendig setning.
+
+*"Our functions are no longer...." -dette er en liste bruk symbol
+ foran -evt skriv om så det blir fulle setninger. Slik det står nå gir
+ det ikke så mye mening.
+
+*Pass på at v, r og t er definert i ord -v -velocity, r -position osv
+
+*"Algorithm for..." -tre punkter lag en liste, bruk innrykk slik man
+ gjør i Python -latex error
+
+*"Implementation" "Moving from physics..." -igjen en for-loop lag
+ liste -fiks latex error.
+
+*Også her mangler jeg alle plot og figurer...
+
+*"Students can use..." -jippi!! Liste på plass :)
+
+*"Examples of possible projects" -masse hashtags -er dette
+ formateringsfeil i html genereringen?
+
+
