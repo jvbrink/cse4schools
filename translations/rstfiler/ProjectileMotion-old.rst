@@ -3,7 +3,7 @@ Workshop: Projectile Motion
 ===========================
 
 An introduction to computing trajectories
------------------------------------------
+=========================================
 
 This workshop focuses on introducing computations to introductory
 physics. Introducing computations should lead to a sense of empowerment
@@ -35,10 +35,10 @@ v(t) and~ r(t) by solving the equations of motion In this workshop, we
 will solve step number 3 numerically, using the Euler method.
 
 The Euler Method
-----------------
+================
 
 A method for solving ordinary differential equations (ODEs)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------
 
 We can solve the equations of motion numerically using the Euler method
 From the definition of the derivative
@@ -63,7 +63,7 @@ If :math:`a(t)` and :math:`v(t)` are known, we can calculate
 .. |plot of eulers method| image:: figs\eulers0.svg
 
 Our functions are no longer continuous, they have become discretized
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================================================================
 
 We only focus on multiples of our time-step
 
@@ -89,7 +89,7 @@ Introduce the shorthand
    time discretization
 
 We solve the equations of motion iteratively
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================================
 
 .. math::  v_{i+1} = v_i + a_i\cdot\Delta t
 
@@ -105,7 +105,7 @@ and :math:`r_0`, until we have reached our end-time :math:`t_N`
 .. math::  i = 0,1,2,3,\ldots, N.
 
 Algorithm for the Euler method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==============================
 
 for :math:`i=0,1,2,3,\ldots, N-1`: 1. Use the previous results
 :math:`x_i` and :math:`v_i` to compute the acceleration: $ a\_i =
@@ -114,10 +114,10 @@ a\_i:raw-latex:`\Delta `t$. 3. Compute the new position: $ r\_{i+1} =
 r\_i + v\_i:raw-latex:`\Delta `t$.
 
 Implementation
---------------
+==============
 
 Moving from physics and math to actual computer code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 
 for :math:`i=0,1,2,3,\ldots, N-1`: 1. Use the previous results
 :math:`x_i` and :math:`v_i` to compute the acceleration: $ a\_i =
@@ -125,7 +125,7 @@ F(x\_i, v\_i, t\_i)/m$. 2. Compute the new velocity: $ v\_{i+1} = v\_i +
 a\_i:raw-latex:`\Delta `t$. 3. Compute the new position: $ r\_{i+1} =
 r\_i + v\_i:raw-latex:`\Delta `t$.
 
-.. code:: python
+.. sagecellserver:: python
 
     for i in range(N):
     	a[i] = F(r[i], v[i], t[i])/m
@@ -138,11 +138,11 @@ we write on paper
 .. math::  t_i \Rightarrow \texttt{t[i]} \qquad  v_i \Rightarrow \texttt{v[i]} \qquad  r_i  \Rightarrow \texttt{r[i]}
 
 We also need various pieces of bookkeeping code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================
 
 Here we define the arrays we will be using
 
-.. code:: python
+.. sagecellserver:: python
 
     #Import various functions meant for numerical science
     import numpy as np 
@@ -169,7 +169,7 @@ Here we define the arrays we will be using
 Here we define the physical constants for our system and the function
 that describes the forces
 
-.. code:: python
+.. sagecellserver:: python
 
     m = 5.5 # mass, kg
     g = 9.81 # acceleration of gravity, m/s^2
@@ -188,7 +188,7 @@ through the air
 As soon as we have solved the equations of motion, we can plot the
 result
 
-.. code:: python
+.. sagecellserver:: python
 
     # Solving equations of motion iteratively
     for i in range(N):
@@ -227,7 +227,7 @@ result
    plot\_cannonball1
 
 Numerical Experimentation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=========================
 
 Altering parameters lets us immediately see the consequences
 
@@ -237,7 +237,7 @@ Altering parameters lets us immediately see the consequences
 .. |plot\_cannonball3| image:: figs\plot_cannonball3.svg
 
 Students can use numerical experimentation to build intuition and knowledge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===========================================================================
 
 -  Numerical results can be compared to known analytical solutions. Are
    numerical results trustworthy?
@@ -247,10 +247,10 @@ Students can use numerical experimentation to build intuition and knowledge
    air drag. What is important, and what can be ignored?
 
 Examples of possible projects
------------------------------
+=============================
 
-You will have a chance to look at some of these today # ## ###Catapults
-and cannons and sports such as baseball
+You will have a chance to look at some of these today ###Catapults and
+cannons and sports such as baseball
 
 -  Easy to compare with experimental data, either before or after
    simulation.
@@ -259,7 +259,7 @@ and cannons and sports such as baseball
 .. |cannonball| image:: figs\cannonball.svg
 
 Skydiving and bungee jumping
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================
 
 -  Great study on free fall and terminal velocity
 -  Can study how parameters such as cross-sectional area and drag
@@ -268,7 +268,7 @@ Skydiving and bungee jumping
    “extreme”?
 
 Pendulum and angular motion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===========================
 
 .. figure:: figs\pendulum.svg
    :alt: pendulum
@@ -280,7 +280,7 @@ Pendulum and angular motion
 -  Can also simulate double pendulum and chaotic systems
 
 Modeling the solar system
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=========================
 
 -  Students can gather real data of planetary orbits from NASA webpages
 -  Can combine numerical simulation with better graphics
