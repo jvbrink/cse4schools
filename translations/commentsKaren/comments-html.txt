@@ -28,7 +28,7 @@ nettsiden www.skulpt.org eller en annen side hvis dere vet om noe
 bedre. Fikk ikke plotting til å funke på noen av de sidene jeg fant...
 
 Hvis vi ikke finner noen løsning for plotting -skriv en kommentar om
-det!
+det! Min kan evt hjelpe oss med å finne en bedre løsning senere!
 
 Hvis dere ikke gjør dette må vi passe på at teksten ikke impliserer at
 de skal teste ting eller endre ting. Se feks "Variables", "Programs
