@@ -97,28 +97,47 @@ Skydiving -part 1
  hva jeg vil fram til? Prøv å sette de forskjellige bitene i en
  sammenheng.
 
-*er akselerasjon (a) og hastighet (v) definert når dere nevner det første gang? Holder å si "a is accelaration" eller noe sånt. Jeg ser at nøyere beskrivelse kommer senere, men det er en grei regel og alltid definere alle forkortelser og symboler første gang de nevnes.
+*er akselerasjon (a) og hastighet (v) definert når dere nevner det
+ første gang? Holder å si "a is accelaration" eller noe sånt. Jeg ser
+ at nøyere beskrivelse kommer senere, men det er en grei regel og
+ alltid definere alle forkortelser og symboler første gang de nevnes.
 
-*Diff. eq.: Heter det ikke "Newton's second law"? Husk stor N og apostrof søk gjennom dokumentet.
+*Diff. eq.: Heter det ikke "Newton's second law"? Husk stor N og
+ apostrof søk gjennom dokumentet.
 
-*Diff.eq : trykkleif "...trying to solve can we written as" -skal vel være be written as.
+*Diff.eq : trykkleif "...trying to solve can we written as" -skal vel
+ være be written as.
 
-*"Newtons 2nd equation is a perfect example of a differential equation, which we solve to find either the velocity (v) or the position (x) of an object. In this case both the velocity and the position are examples of functions because they differ with time: v(t), x(t)." -jeg har bare lagt til v og x i parenteser slik at leseren har sett det før det blir gjort til funksjoner av tid.
+*"Newtons 2nd equation is a perfect example of a differential
+ equation, which we solve to find either the velocity (v) or the
+ position (x) of an object. In this case both the velocity and the
+ position are examples of functions because they differ with time:
+ v(t), x(t)." -jeg har bare lagt til v og x i parenteser slik at
+ leseren har sett det før det blir gjort til funksjoner av tid.
 
-*"Solving the unsolvable" -dette er kanskje kjent stoff, men ville det ikke vært greit å vise hvilke likninger vi løser for å få resultatet? Eller i det minste nevne at likningen i avsnittet før kalles bevegelseslikningen og at det er løsningen som vises? 
+*"Solving the unsolvable" -dette er kanskje kjent stoff, men ville det
+ ikke vært greit å vise hvilke likninger vi løser for å få resultatet?
+ Eller i det minste nevne at likningen i avsnittet før kalles
+ bevegelseslikningen og at det er løsningen som vises?
 
-*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som er enkelt for dere kan være komplett uforståelig for elevene. Dere kan velge selv om dere beholder det.
+*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som
+ er enkelt for dere kan være komplett uforståelig for elevene. Dere
+ kan velge selv om dere beholder det.
 
-*har dere definert at posisjonen som den derivert av x i symboler? v = dx/dt?
+*har dere definert at posisjonen som den derivert av x i symboler? v =
+ dx/dt?
 
 *"Solving the equations of motions..." -dropp punktum i overskriften.
 
-*definer n og n+1 -dette er gjort i neste avsnitt, men tror det er lettere å forstå hvis dere definerer det eksplisitt og nevner at formlene blir de samme.
+*definer n og n+1 -dette er gjort i neste avsnitt, men tror det er
+ lettere å forstå hvis dere definerer det eksplisitt og nevner at
+ formlene blir de samme.
 
-*Det slår meg at det kanskje ville vært kjekt med likningsnummer så dere kan referere fram og tilbake. Det er ikke noe must, altså! Uansett, jeg fant dette på sphinx-doc:
+*Det slår meg at det kanskje ville vært kjekt med likningsnummer så
+ dere kan referere fram og tilbake. Det er ikke noe must, altså!
+ Uansett, jeg fant dette på sphinx-doc:
 
-.. math:: e^{i\pi} + 1 = 0
-   :label: euler
+.. math:: e^{i\pi} + 1 = 0 :label: euler
 
 Euler's identity, equation :eq:`euler`, was elected one of the most
 beautiful mathematical formulas.
@@ -146,13 +165,58 @@ Skydiving -part 2
 
 *Newton's 2nd law :)
 
-*Her brukes v(i+1) istedetfor v(n) -ikke superviktig, men greit å være konsistent!
+*Her brukes v(i+1) istedetfor v(n) -ikke superviktig, men greit å være
+ konsistent!
 
 *Punktum i siste setning i første avsnitt.
 
-*Jippi! her har jeg fått med bilde! Kan dere skrive en litt mer forklarende bildetekst? Type: "Illustration of a bungee jumper. The bridge is 60 m tall and the equilibrium point (x = 0) is marked with a stapled line."
+*Jippi! her har jeg fått med bilde! Kan dere skrive en litt mer
+ forklarende bildetekst? Type: "Illustration of a bungee jumper. The
+ bridge is 60 m tall and the equilibrium point (x = 0) is marked with
+ a stapled line." Bildetekst kan være nyttige ved flere figurer. Ta en
+ titt! Jeg kan evt sjekke dette igjen når flere av figurene kommer med
+ :)
 
-*
+*"...gravity mg...." -formater mg
+
+*"The code" -punkt 8 sjekk latex formatering.
+
+*"The code" -punkt 9 -mangler formelene? og er det litt rart og ha den
+ Sage-cell ruten? Foreslår å gjøre den statisk.
+
+*Dere bør også skrive noe sånt som "we encourage the reader to try to
+ solve the exercises independently and compare your code to the code
+ you find here" -sett inn lenk eller forklar hvor løsningen ligger.
+
+*"Point of Eq" "Exercises" punkt 1 trykkleif "...there is a person of
+ mass m is hanging..." -fjern den siste "is". Husk punktum på slutten
+ av setningen.
+
+*"Plotting g forces" -er det naturlig å ha Sage cell? Den vil
+ hvertfall gi feilmelding...
+
+*"Deploying the parachute" -kodebit kjører ikke. Hvis vi skal beholde
+ den interaktiv er det kanskje bra om den ikke gir feilmelding?
+
+
+Bungee code
+-----------
+*Endre navn til "Code Skydiving -part 2" eller liknende slik at det er
+ klart at det hører til "Skydiving -part 2"
+
+*kommenter koden og kanskje skrive litt i mellom kodeblokkene.
+
+*forklar hvor de kan finne tutorialen og at det hører sammen -helt kort altså.
+
+*Det ser litt rart ut når det er så mange definisjoner uten
+ output. Kanskje dere bare skal samle definisjoner i en rute?
+
+*tok lang tid å kjøre, men det kan være min data?
+
+*plotting funker brillefint :)
+
+
+
 
 Workshop: Projectile Motion
 ---------------------------
@@ -202,3 +266,46 @@ Workshop: Projectile Motion
  formateringsfeil i html genereringen?
 
 
+Battleship!
+-----------
+
+*"What are we going to do?" -kanskje det bør stå på begynnelsen at det
+ forutsetter kunnskapen de har fått gjennom tutorialen "intro"? Dette
+ for å sette materialet vårt i sammenheng.
+
+*Denne setningen skjønner jeg ikke: "The board represents the ocean,
+ and we want it to be a grid so that we can guess a square by giving
+ the x and y coordinates." Hva menes med "guess a square by giving
+ the..."?
+
+*list of list = nested list? men det er det samme hva dere kaller det.
+
+*Er overskriftene riktig i dette dokumentet? Bare den første
+ overskriften har fått blå boks.
+
+*Exercises -igjen skal koden være statisk eller interaktiv? Dere kan
+ beholde den interaktiv og be leseren fylle inn slik at koden kjøres
+ -henvis til oppgaven i neste avsnitt.
+
+*Kanskje det bør gjøres klart hvor leseren skal gjøre oppgavene. Skal
+ det gjøres på nettsiden eller skal de bruke sage notebook og åpne
+ jupyter som de gjorde i intro tutorialen? Eller er dette unødvendig å
+ si noe om?
+
+*listen names = ["Lisa", "Mary", "Marcus"] er både som interaktiv boks
+ og statisk boks. Det er vel unødvendig? Velg enten statisk eller
+ interaktiv.
+
+*Exercises -kanskje det hadde vært greit med nummer -hadde hvertfall
+ gjort det lettere for meg å kommentere ;)
+
+*"Hit or miss?" "Exercises" Sjekk at alle guess_x ol er formatert
+ riktig.
+
+*"Hit or miss?" "Exercises" Igjen kanskje hint-kodeblokken burde være
+ statisk?
+
+*Vi har ikke noe løsningsforslag til denne tutorialen, men det syns
+ jeg egentlig er greit!
+
+THE END :O)
