@@ -9,7 +9,7 @@ Introduction to programming with Python -expanded
 *Dette er generelt veldig bra og jeg har stort sett bare små
  kommentarer :)
 
-*Lightbot bilde mangler
+!*Lightbot bilde mangler
 
 *Installation -fjern denne seksjonen (evt skriv en tutorial hvor dere
  forklarer hvordan dere har gjort dette når dere har holdt kurs.)
@@ -34,28 +34,28 @@ de skal teste ting eller endre ting. Se feks "Variables", "Programs
 Syns dere fortsatt vi skal la "output" være eller kan vi fjerne det?
 Litt usikker selv!
 
-*Math section -Python med stor P
+!*Math section -Python med stor P
 
-*Text string skrives som to ord
+!*Text string skrives som to ord
 
-*Structuring your codes -husk anførselstegn når dere bruker sitater
+!*Structuring your codes -husk anførselstegn når dere bruker sitater
 
-*Comments -siste linje er annerledes enn ellers hvor dere har "output"
+!*Comments -siste linje er annerledes enn ellers hvor dere har "output"
  i grønne bokser.
 
-*Whitespace -kan man skrive cant? Enten can't eller cannot.
+!*Whitespace -kan man skrive cant? Enten can't eller cannot.
 
-*Rolling a dice -burde ikke det være et underpunkt under "random"? Her
- er det også lagt opp til interaksjon.
+!*Rolling a dice -burde ikke det være et underpunkt under "random"? Her
+ er det også lagt opp til interaksjon. ('die' er entall av 'dice')
 
-*for loop diagram -skulle det vært en figur her?
+!*for loop diagram -skulle det vært en figur her?
 
-*for loop -section -trykkleif: antother
+!*for loop -section -trykkleif: antother
 
-*Dette må jeg ha skrevet selv: "here is to examples" -here are two
+!*Dette må jeg ha skrevet selv: "here is to examples" -here are two
  examples, sant?
 
-*igjen -here is a few examples...jeg er innmari dårlig på is og are så
+!*igjen -here is a few examples...jeg er innmari dårlig på is og are så
  dere finner sikkert flere hvis dere ser etter!
 
 *if/else -igjen forutsettes interaksjon
@@ -66,7 +66,7 @@ Litt usikker selv!
  
 *function blackbox -mangler
 
-*Python med stor bokstav -søk gjennom dokumentet.
+!*Python med stor bokstav -søk gjennom dokumentet.
 
 *We define two functions, f1 and f2. Kanskje dere kan legge til Let's
  define...?
