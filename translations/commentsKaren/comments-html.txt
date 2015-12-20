@@ -60,11 +60,11 @@ Litt usikker selv!
 
 *if/else -igjen forutsettes interaksjon
 
-*while loop -skulle det vært et bilde eller en figur?
+!*while loop -skulle det vært et bilde eller en figur?
 
 *roll a die -tihi! endre til "dice" fant det minst to steder
  
-*function blackbox -mangler
+!*function blackbox -mangler
 
 !*Python med stor bokstav -søk gjennom dokumentet.
 
@@ -73,14 +73,14 @@ Litt usikker selv!
 
 *...but we want.... -er det bedre med ....while we would like....
 
-*når f1(2) kjøres er det en grønn rute med 4, men f1 skal ikke printe
+!*når f1(2) kjøres er det en grønn rute med 4, men f1 skal ikke printe
  :)
 
-*f2 mangler kode formatering minst et sted.
+!*f2 mangler kode formatering minst et sted.
 
 *alle bilder mangler på min pc...
 
-*Plotting -forklar %matplotlib inline -import er alt forklart sant?
+!*Plotting -forklar %matplotlib inline -import er alt forklart sant?
 
 *Vi bør kanskje også ha et punkt om at dette dokumentet ikke
  inneholder oppgaver, men at de finnes et annet sted?
@@ -280,8 +280,10 @@ Battleship!
 
 *list of list = nested list? men det er det samme hva dere kaller det.
 
-*Er overskriftene riktig i dette dokumentet? Bare den første
- overskriften har fått blå boks.
+! *Er overskriftene riktig i dette dokumentet? Bare den første
+ overskriften har fått blå boks. (har endret overskriftene til å følge
+ samme struktur som den originale pdf-en, er det fint sånn, eller skal
+ jeg sette flere overskrifter i blå boks?)
 
 *Exercises -igjen skal koden være statisk eller interaktiv? Dere kan
  beholde den interaktiv og be leseren fylle inn slik at koden kjøres
@@ -292,11 +294,11 @@ Battleship!
  jupyter som de gjorde i intro tutorialen? Eller er dette unødvendig å
  si noe om?
 
-*listen names = ["Lisa", "Mary", "Marcus"] er både som interaktiv boks
+!*listen names = ["Lisa", "Mary", "Marcus"] er både som interaktiv boks
  og statisk boks. Det er vel unødvendig? Velg enten statisk eller
  interaktiv.
 
-*Exercises -kanskje det hadde vært greit med nummer -hadde hvertfall
+!*Exercises -kanskje det hadde vært greit med nummer -hadde hvertfall
  gjort det lettere for meg å kommentere ;)
 
 *"Hit or miss?" "Exercises" Sjekk at alle guess_x ol er formatert
