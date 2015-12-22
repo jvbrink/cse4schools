@@ -4,20 +4,30 @@
 Introduction to programming with Python -expanded
 -------------------------------------------------
 
+Gjenstår:
+*Fjern den originale :)
+  V: Kan Marcin gjøre dette?
+
+*Vi bør kanskje også ha et punkt om at dette dokumentet ikke
+ inneholder oppgaver, men at de finnes et annet sted?
+  V: Vi har vel aldri lastet opp oppgavene?
+-------------------------------------------------------------------------
+
+
 *Fjern den originale :)
 
-*Dette er generelt veldig bra og jeg har stort sett bare små
+!*Dette er generelt veldig bra og jeg har stort sett bare små
  kommentarer :)
 
 !*Lightbot bilde mangler
 
-*Installation -fjern denne seksjonen (evt skriv en tutorial hvor dere
+!*Installation -fjern denne seksjonen (evt skriv en tutorial hvor dere
  forklarer hvordan dere har gjort dette når dere har holdt kurs.)
 
-*Generell kommentar -bruk "vi" og "oss" istedetfor "jeg" (I) og "meg"
+!*Generell kommentar -bruk "vi" og "oss" istedetfor "jeg" (I) og "meg"
  -søk gjennom dokumentet.
 
-*Generell kommentar -jeg så for meg at studentene kunne kjøre
+!*Generell kommentar -jeg så for meg at studentene kunne kjøre
 kommandoene feks "Hello world" -regner med at det er Marcin som har
 fjernet dette og etter å ha tenkt meg litt om er det kanskje bra siden
 Sage av og til gir helt annen output enn Python. Derfor foreslår jeg
@@ -58,27 +68,27 @@ Litt usikker selv!
 !*igjen -here is a few examples...jeg er innmari dårlig på is og are så
  dere finner sikkert flere hvis dere ser etter!
 
-*if/else -igjen forutsettes interaksjon
+!*if/else -igjen forutsettes interaksjon
 
 !*while loop -skulle det vært et bilde eller en figur?
 
-*roll a die -tihi! endre til "dice" fant det minst to steder
+!*roll a die -tihi! endre til "dice" fant det minst to steder
  
 !*function blackbox -mangler
 
 !*Python med stor bokstav -søk gjennom dokumentet.
 
-*We define two functions, f1 and f2. Kanskje dere kan legge til Let's
+!*We define two functions, f1 and f2. Kanskje dere kan legge til Let's
  define...?
 
-*...but we want.... -er det bedre med ....while we would like....
+!*...but we want.... -er det bedre med ....while we would like....
 
 !*når f1(2) kjøres er det en grønn rute med 4, men f1 skal ikke printe
  :)
 
 !*f2 mangler kode formatering minst et sted.
 
-*alle bilder mangler på min pc...
+!*alle bilder mangler på min pc...
 
 !*Plotting -forklar %matplotlib inline -import er alt forklart sant?
 
