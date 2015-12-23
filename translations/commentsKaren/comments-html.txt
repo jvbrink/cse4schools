@@ -290,10 +290,11 @@ Battleship!
 
 *list of list = nested list? men det er det samme hva dere kaller det.
 
-! *Er overskriftene riktig i dette dokumentet? Bare den første
- overskriften har fått blå boks. (har endret overskriftene til å følge
- samme struktur som den originale pdf-en, er det fint sånn, eller skal
- jeg sette flere overskrifter i blå boks?)
+!*Er overskriftene riktig i dette dokumentet? Bare den første
+ overskriften har fått blå boks. 
+  M: har prøvd å endre overskriftene til å følge samme struktur som den 
+     originale pdf-en, er det fint sånn, eller skal jeg sette flere
+     overskrifter i blå boks?
 
 *Exercises -igjen skal koden være statisk eller interaktiv? Dere kan
  beholde den interaktiv og be leseren fylle inn slik at koden kjøres
@@ -303,6 +304,8 @@ Battleship!
  det gjøres på nettsiden eller skal de bruke sage notebook og åpne
  jupyter som de gjorde i intro tutorialen? Eller er dette unødvendig å
  si noe om?
+  M: Dette er vel kanskje litt opp til hva leseren foretrekker? Vi
+     kan kan kanskje komme med noen forslag
 
 !*listen names = ["Lisa", "Mary", "Marcus"] er både som interaktiv boks
  og statisk boks. Det er vel unødvendig? Velg enten statisk eller
@@ -311,10 +314,10 @@ Battleship!
 !*Exercises -kanskje det hadde vært greit med nummer -hadde hvertfall
  gjort det lettere for meg å kommentere ;)
 
-*"Hit or miss?" "Exercises" Sjekk at alle guess_x ol er formatert
+!*"Hit or miss?" "Exercises" Sjekk at alle guess_x ol er formatert
  riktig.
 
-*"Hit or miss?" "Exercises" Igjen kanskje hint-kodeblokken burde være
+!*"Hit or miss?" "Exercises" Igjen kanskje hint-kodeblokken burde være
  statisk?
 
 *Vi har ikke noe løsningsforslag til denne tutorialen, men det syns
