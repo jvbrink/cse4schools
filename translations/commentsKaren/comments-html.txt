@@ -153,7 +153,7 @@ Euler's identity, equation :eq:`euler`, was elected one of the most
 beautiful mathematical formulas.
 
 
-*Latex feil i "writing the code" punkt 6
+!*Latex feil i "writing the code" punkt 6
 
 
 Parachute -code
@@ -161,8 +161,12 @@ Parachute -code
 
 *Endre navn til "Code Skydiving -part 1" eller liknende slik at det er
  klart at det hører til "Skydiving -part 1"
+  M: Denne koden hører strengt tatt til "Skydiving - part 2" også siden den har
+     med at fallskjermen utløses, hvilket er en del av "Skydiving - part 2". 
+     Burde vi legge opp til at de venter med å se på denne koden til de er ferdig
+     med del 1 og 2, eller er det greit om de ser på det etter del 1? 
 
-*Hvis dere har tid kan dere kommentere koden
+!*Hvis dere har tid kan dere kommentere koden
 
 *Det ser litt rart ut når det er så mange definisjoner uten
  output. Kanskje dere bare skal samle definisjoner i en rute?
