@@ -98,7 +98,9 @@ Litt usikker selv!
 Skydiving -part 1
 -----------------
 
-*Begynn med å skrive noe alla "In the introduction tutorial we learned
+V: La til et punkt "The forces acting on the jumper".
+
+!*Begynn med å skrive noe alla "In the introduction tutorial we learned
  some basics programming skill. You will need what you learned
  previously and don't hesitate to go back to the previous tutorial if
  you have forgotten something. Now we are going to look at an example
@@ -107,18 +109,18 @@ Skydiving -part 1
  hva jeg vil fram til? Prøv å sette de forskjellige bitene i en
  sammenheng.
 
-*er akselerasjon (a) og hastighet (v) definert når dere nevner det
+!*er akselerasjon (a) og hastighet (v) definert når dere nevner det
  første gang? Holder å si "a is accelaration" eller noe sånt. Jeg ser
  at nøyere beskrivelse kommer senere, men det er en grei regel og
  alltid definere alle forkortelser og symboler første gang de nevnes.
 
-*Diff. eq.: Heter det ikke "Newton's second law"? Husk stor N og
+!*Diff. eq.: Heter det ikke "Newton's second law"? Husk stor N og
  apostrof søk gjennom dokumentet.
 
-*Diff.eq : trykkleif "...trying to solve can we written as" -skal vel
+!*Diff.eq : trykkleif "...trying to solve can we written as" -skal vel
  være be written as.
 
-*"Newtons 2nd equation is a perfect example of a differential
+!*"Newtons 2nd equation is a perfect example of a differential
  equation, which we solve to find either the velocity (v) or the
  position (x) of an object. In this case both the velocity and the
  position are examples of functions because they differ with time:
@@ -129,19 +131,26 @@ Skydiving -part 1
  ikke vært greit å vise hvilke likninger vi løser for å få resultatet?
  Eller i det minste nevne at likningen i avsnittet før kalles
  bevegelseslikningen og at det er løsningen som vises?
+  V: Hm, skjønner ikke helt. "Equations of motion" er nevnt?
 
-*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som
+!*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som
  er enkelt for dere kan være komplett uforståelig for elevene. Dere
  kan velge selv om dere beholder det.
+  V: Fjernet det
 
 *har dere definert at posisjonen som den derivert av x i symboler? v =
  dx/dt?
+  V: Har vi bruk for det noe sted? Finner ikke et sted det går an å sette 
+  det inn uten at det blir forvirrende siden vi tross alt aldri får bruk for det?
+  (Eller overser jeg noe?)
 
-*"Solving the equations of motions..." -dropp punktum i overskriften.
+!*"Solving the equations of motions..." -dropp punktum i overskriften.
 
-*definer n og n+1 -dette er gjort i neste avsnitt, men tror det er
+!*definer n og n+1 -dette er gjort i neste avsnitt, men tror det er
  lettere å forstå hvis dere definerer det eksplisitt og nevner at
  formlene blir de samme.
+  V: Vet ikke om jeg skjønte dette heller helt, men jeg prøvde i hvert fall å 
+    skrive noe som kanskje kan klargjøre (eller kanskje det bare forvirrer).
 
 *Det slår meg at det kanskje ville vært kjekt med likningsnummer så
  dere kan referere fram og tilbake. Det er ikke noe must, altså!
