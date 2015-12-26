@@ -258,49 +258,57 @@ Bungee code
 Workshop: Projectile Motion
 ---------------------------
 
-*Her har jeg en del kommentarer så veldig bra om dere bruker litt tid
+!*Her har jeg en del kommentarer så veldig bra om dere bruker litt tid
  på og forbedre dette. Dere har ikke gjort noe feil det er bare
  formatet som ble litt rart når det er tatt ut av sin sammenheng. Evt
  ser det rart ut fordi det skjer noe feil i konverteringen fra rst til
  html?
+ V: Prøver meg på å huke av dette punktet også, men du får se hva du synes :-)
 
-*Generell kommentar: Denne tutorialen er basert på en presentasjon
+!*Generell kommentar: Denne tutorialen er basert på en presentasjon
  -prøv så langt det går å få det til å se ut som slides med lister der
  det er naturlig osv. Jeg har kommentert på dette nedenfor.
+ V: Har fullført lista + endret noen overskrifter sånn at det kanskje ser
+ mer naturlig ut?
 
-*Nevn i første seksjon at dette er basert på presentasjonen holdt på
+!*Nevn i første seksjon at dette er basert på presentasjonen holdt på
  iCSE4schools workshop i Katowice 29. januar, 2015, og at det var
  Jonas van den Brink som holdt presentasjonen.
 
-*"An intro..." Det første avsnittet kan komme før overskriften
+!*"An intro..." Det første avsnittet kan komme før overskriften
 
-*"An intro...." Poengene 1., 2. og 3. bør være en liste
+!*"An intro...." Poengene 1., 2. og 3. bør være en liste
 
-*"cannonball" -virker litt tatt ut av sammenhengen
+!*"cannonball" -virker litt tatt ut av sammenhengen
+  V: Det var nok bare en "alt text" til et bilde?
 
-*"Our algorithm...." her er det igjen tre punkter -lag en liste.
+!*"Our algorithm...." her er det igjen tre punkter -lag en liste.
 
-*Euler method -linje skift før "From the def..." evt skriv det om så
+!*Euler method -linje skift før "From the def..." evt skriv det om så
  dere får en fullstendig setning.
 
-*"Our functions are no longer...." -dette er en liste bruk symbol
+!*"Our functions are no longer...." -dette er en liste bruk symbol
  foran -evt skriv om så det blir fulle setninger. Slik det står nå gir
  det ikke så mye mening.
+  V: Tror problemet her at alt som står som ".. raw:: latex" ikke kommer med, 
+  så det er formler du ikke ser. Skal bytte til  ".. math::".
+  Hvis det ikke virker (men jeg tror rst math = latex math mode?) må vi finne på noe annet.
 
-*Pass på at v, r og t er definert i ord -v -velocity, r -position osv
+!*Pass på at v, r og t er definert i ord -v -velocity, r -position osv
 
-*"Algorithm for..." -tre punkter lag en liste, bruk innrykk slik man
+!*"Algorithm for..." -tre punkter lag en liste, bruk innrykk slik man
  gjør i Python -latex error
 
-*"Implementation" "Moving from physics..." -igjen en for-loop lag
+!*"Implementation" "Moving from physics..." -igjen en for-loop lag
  liste -fiks latex error.
 
-*Også her mangler jeg alle plot og figurer...
+!*Også her mangler jeg alle plot og figurer...
 
-*"Students can use..." -jippi!! Liste på plass :)
+!*"Students can use..." -jippi!! Liste på plass :)
 
-*"Examples of possible projects" -masse hashtags -er dette
+!*"Examples of possible projects" -masse hashtags -er dette
  formateringsfeil i html genereringen?
+ V: Dette ser jeg ikke noe til?
 
 
 Battleship!
