@@ -186,32 +186,38 @@ Parachute -code
 Skydiving -part 2
 -----------------
 
-*Newton's 2nd law :)
+!*Newton's 2nd law :)
 
-*Her brukes v(i+1) istedetfor v(n) -ikke superviktig, men greit å være
+!*Her brukes v(i+1) istedetfor v(n) -ikke superviktig, men greit å være
  konsistent!
 
-*Punktum i siste setning i første avsnitt.
+!*Punktum i siste setning i første avsnitt.
 
-*Jippi! her har jeg fått med bilde! Kan dere skrive en litt mer
+!*Jippi! her har jeg fått med bilde! Kan dere skrive en litt mer
  forklarende bildetekst? Type: "Illustration of a bungee jumper. The
  bridge is 60 m tall and the equilibrium point (x = 0) is marked with
  a stapled line." Bildetekst kan være nyttige ved flere figurer. Ta en
  titt! Jeg kan evt sjekke dette igjen når flere av figurene kommer med
  :)
 
-*"...gravity mg...." -formater mg
+!*"...gravity mg...." -formater mg
 
-*"The code" -punkt 8 sjekk latex formatering.
+!*"The code" -punkt 8 sjekk latex formatering.
+  V: Tror jeg har fikset dette nå
 
-*"The code" -punkt 9 -mangler formelene? og er det litt rart og ha den
+!*"The code" -punkt 9 -mangler formelene? og er det litt rart og ha den
  Sage-cell ruten? Foreslår å gjøre den statisk.
+  V: Jepp, det mangler formler. Linje 179-185 har en ".. raw:: latex" som ikke kommer med.
+  Det samme gjelder for linje 140-150 (rett over "The code" slutter forrige del bare med "like this").
+  Også i linje 61-69, rett over "Bungee jump". 
+  Prøver å fikse ved å bytte fra "raw latex" til "math".
 
-*Dere bør også skrive noe sånt som "we encourage the reader to try to
+!*Dere bør også skrive noe sånt som "we encourage the reader to try to
  solve the exercises independently and compare your code to the code
  you find here" -sett inn lenk eller forklar hvor løsningen ligger.
 
-*"Point of Eq" "Exercises" punkt 1 trykkleif "...there is a person of
+
+!*"Point of Eq" "Exercises" punkt 1 trykkleif "...there is a person of
  mass m is hanging..." -fjern den siste "is". Husk punktum på slutten
  av setningen.
 
@@ -220,23 +226,31 @@ Skydiving -part 2
 
 *"Deploying the parachute" -kodebit kjører ikke. Hvis vi skal beholde
  den interaktiv er det kanskje bra om den ikke gir feilmelding?
+ 
+ V: Jeg synes kanskje ingen av disse trenger å være interaktive? Det er jo bare deler 
+ av programmet, de må uansett sette det inn i programmet de har laget i oppgavene.
 
 
 Bungee code
 -----------
 *Endre navn til "Code Skydiving -part 2" eller liknende slik at det er
  klart at det hører til "Skydiving -part 2"
+  V: Jeg synes det er fint at den ene heter Parachute og den andre Bungee, for 
+  i parachute løses alt som har med fallskjermhoppet og gjøre, både fra Skydiving 1 
+  og fra Skydiving 2, mens alt som har med strikkhopp å gjøre blir løst i Bungee.
 
-*kommenter koden og kanskje skrive litt i mellom kodeblokkene.
+!*kommenter koden og kanskje skrive litt i mellom kodeblokkene.
+ V: Marie, ser ut som om du har fikset dette?
 
-*forklar hvor de kan finne tutorialen og at det hører sammen -helt kort altså.
+!*forklar hvor de kan finne tutorialen og at det hører sammen -helt kort altså.
+  V: Gjorde det samme for parachute
 
 *Det ser litt rart ut når det er så mange definisjoner uten
  output. Kanskje dere bare skal samle definisjoner i en rute?
 
 *tok lang tid å kjøre, men det kan være min data?
 
-*plotting funker brillefint :)
+!*plotting funker brillefint :)
 
 
 
