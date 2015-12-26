@@ -241,6 +241,7 @@ Bungee code
 
 !*kommenter koden og kanskje skrive litt i mellom kodeblokkene.
  V: Marie, ser ut som om du har fikset dette?
+ M: Jepp, jeg har lagt til en liten beskrivelse over hver kodeblokk :)
 
 !*forklar hvor de kan finne tutorialen og at det hører sammen -helt kort altså.
   V: Gjorde det samme for parachute
@@ -293,6 +294,7 @@ Workshop: Projectile Motion
   V: Tror problemet her at alt som står som ".. raw:: latex" ikke kommer med, 
   så det er formler du ikke ser. Skal bytte til  ".. math::".
   Hvis det ikke virker (men jeg tror rst math = latex math mode?) må vi finne på noe annet.
+  M: Det virker! Det dukket opp noen latex problemer, men jeg tror jeg har fikset dem
 
 !*Pass på at v, r og t er definert i ord -v -velocity, r -position osv
 
@@ -309,7 +311,12 @@ Workshop: Projectile Motion
 !*"Examples of possible projects" -masse hashtags -er dette
  formateringsfeil i html genereringen?
  V: Dette ser jeg ikke noe til?
-
+ M: Ikke jeg heller, men jeg er usikker på om formateringen er riktig.
+    Ser ut som kanskje "Examples of possible projects" skal være en
+    større overskrift med "Catapults and cannons and sports such as baseball",
+    "Skydiving and bungeejumping", "Pendulum and angular motion" og 
+    "Modelling the solar system" som underoverskrifter? Hva tenker dere?
+    
 
 Battleship!
 -----------
