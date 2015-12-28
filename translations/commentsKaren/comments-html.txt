@@ -56,7 +56,7 @@ Litt usikker selv!
 !*Whitespace -kan man skrive cant? Enten can't eller cannot.
 
 !*Rolling a dice -burde ikke det være et underpunkt under "random"? Her
- er det også lagt opp til interaksjon. ('die' er entall av 'dice')
+ er det også lagt opp til interaksjon. 
 
 !*for loop diagram -skulle det vært en figur her?
 
@@ -73,6 +73,8 @@ Litt usikker selv!
 !*while loop -skulle det vært et bilde eller en figur?
 
 !*roll a die -tihi! endre til "dice" fant det minst to steder
+ V: 'die' er entall av 'dice' 
+    (kan også bruke "dice" som entall og "dices" som flertall)
  
 !*function blackbox -mangler
 
@@ -94,6 +96,9 @@ Litt usikker selv!
 
 *Vi bør kanskje også ha et punkt om at dette dokumentet ikke
  inneholder oppgaver, men at de finnes et annet sted?
+ 
+!* V: Fikset et avsnitt under "types" hvor det stod "locationyand" osv.
+
 
 Skydiving -part 1
 -----------------
@@ -300,6 +305,8 @@ Workshop: Projectile Motion
 
 !*"Algorithm for..." -tre punkter lag en liste, bruk innrykk slik man
  gjør i Python -latex error
+ V: Ops, her ble det litt feil da jeg fikset latex erroren, så det er noen "v_i" osv.
+    Skal være i orden neste gang vi kjører make html.
 
 !*"Implementation" "Moving from physics..." -igjen en for-loop lag
  liste -fiks latex error.
@@ -317,30 +324,42 @@ Workshop: Projectile Motion
     "Skydiving and bungeejumping", "Pendulum and angular motion" og 
     "Modelling the solar system" som underoverskrifter? Hva tenker dere?
     
+ V: Gir mer mening, fikset det nå sånn at "examples ..." blir blå og at "canonball" 
+    blir sin egen underoverskrift med to punkter under (sånn som skydiving, pendulum og 
+    solar system er). Fjernet også "You will have a chance to look at some of these today"
+    siden det ikke er sant for de som leser det.
+    
 
 Battleship!
 -----------
 
-*"What are we going to do?" -kanskje det bør stå på begynnelsen at det
+!*"What are we going to do?" -kanskje det bør stå på begynnelsen at det
  forutsetter kunnskapen de har fått gjennom tutorialen "intro"? Dette
  for å sette materialet vårt i sammenheng.
 
-*Denne setningen skjønner jeg ikke: "The board represents the ocean,
+!*Denne setningen skjønner jeg ikke: "The board represents the ocean,
  and we want it to be a grid so that we can guess a square by giving
  the x and y coordinates." Hva menes med "guess a square by giving
  the..."?
 
-*list of list = nested list? men det er det samme hva dere kaller det.
+!*list of list = nested list? men det er det samme hva dere kaller det.
+ V: "list of lists" er brukt i "introduction to ...", så det er kanskje 
+    greit å fortsette med det samme?
 
 !*Er overskriftene riktig i dette dokumentet? Bare den første
  overskriften har fått blå boks. 
   M: har prøvd å endre overskriftene til å følge samme struktur som den 
      originale pdf-en, er det fint sånn, eller skal jeg sette flere
      overskrifter i blå boks?
+  V: endret "Shoot the ship!" til blå også, men resten synes jeg skal være.
 
 *Exercises -igjen skal koden være statisk eller interaktiv? Dere kan
  beholde den interaktiv og be leseren fylle inn slik at koden kjøres
  -henvis til oppgaven i neste avsnitt.
+ 
+ V: Jeg synes alle her også kan være statiske, for det er ikke faktisk kode, bare forslag til 
+    deler av koden. Man må skrive helheten selv. Ved å ha den statisk er det også tydeligere at 
+    de skal gjøre den i et eget program (skrev om å laste ned Python i introduksjonen).
 
 *Kanskje det bør gjøres klart hvor leseren skal gjøre oppgavene. Skal
  det gjøres på nettsiden eller skal de bruke sage notebook og åpne
