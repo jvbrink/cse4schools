@@ -7,10 +7,16 @@ Introduction to programming with Python -expanded
 Gjenstår:
 *Fjern den originale :)
   V: Kan Marcin gjøre dette?
+KHS: Ja, jeg skal be han fjerne den. Men kan dere endre titler? Hvis ikke skal jeg be han fjerne "expanded".
 
 *Vi bør kanskje også ha et punkt om at dette dokumentet ikke
  inneholder oppgaver, men at de finnes et annet sted?
   V: Vi har vel aldri lastet opp oppgavene?
+KHS: Det stemmer sikkert...ikke tenk på det! Det er jo noen oppgaver innimellom!
+
+KHS: Jeg fant en trykkleif under feilmeldinger "at the first line..." mangler stor bokstav.
+
+KHS: Under for-loops er det bare forklart at range kan ta to argumenter -men så bruker dere tre. Fint om dere kan forklare det. 
 -------------------------------------------------------------------------
 
 
@@ -137,6 +143,7 @@ V: La til et punkt "The forces acting on the jumper".
  Eller i det minste nevne at likningen i avsnittet før kalles
  bevegelseslikningen og at det er løsningen som vises?
   V: Hm, skjønner ikke helt. "Equations of motion" er nevnt?
+KHS: Ja, de er nevnt tidligere, men da heter de bare "differential equation". 
 
 !*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som
  er enkelt for dere kan være komplett uforståelig for elevene. Dere
@@ -148,6 +155,7 @@ V: La til et punkt "The forces acting on the jumper".
   V: Har vi bruk for det noe sted? Finner ikke et sted det går an å sette 
   det inn uten at det blir forvirrende siden vi tross alt aldri får bruk for det?
   (Eller overser jeg noe?)
+KHS: Det er helt sikkert greit!
 
 !*"Solving the equations of motions..." -dropp punktum i overskriften.
 
@@ -156,6 +164,7 @@ V: La til et punkt "The forces acting on the jumper".
  formlene blir de samme.
   V: Vet ikke om jeg skjønte dette heller helt, men jeg prøvde i hvert fall å 
     skrive noe som kanskje kan klargjøre (eller kanskje det bare forvirrer).
+KHS: Jeg syns det var oppklarende, men nå er det en latex feil her ;)
 
 *Det slår meg at det kanskje ville vært kjekt med likningsnummer så
  dere kan referere fram og tilbake. Det er ikke noe must, altså!
@@ -166,6 +175,7 @@ V: La til et punkt "The forces acting on the jumper".
 Euler's identity, equation :eq:`euler`, was elected one of the most
 beautiful mathematical formulas.
 
+KHS: Dropp likningsnummer! :)
 
 !*Latex feil i "writing the code" punkt 6
 
@@ -178,7 +188,8 @@ Parachute -code
   M: Denne koden hører strengt tatt til "Skydiving - part 2" også siden den har
      med at fallskjermen utløses, hvilket er en del av "Skydiving - part 2". 
      Burde vi legge opp til at de venter med å se på denne koden til de er ferdig
-     med del 1 og 2, eller er det greit om de ser på det etter del 1? 
+     med del 1 og 2, eller er det greit om de ser på det etter del 1?
+KHS: Behold det som det er! Nå forklarer dere jo dette i første setning og det er ryddig og fint.
 
 !*Hvis dere har tid kan dere kommentere koden
 
@@ -235,6 +246,8 @@ Skydiving -part 2
  V: Jeg synes kanskje ingen av disse trenger å være interaktive? Det er jo bare deler 
  av programmet, de må uansett sette det inn i programmet de har laget i oppgavene.
 
+KHS: Ja, helt fint med statisk kode :)
+
 
 Bungee code
 -----------
@@ -243,6 +256,7 @@ Bungee code
   V: Jeg synes det er fint at den ene heter Parachute og den andre Bungee, for 
   i parachute løses alt som har med fallskjermhoppet og gjøre, både fra Skydiving 1 
   og fra Skydiving 2, mens alt som har med strikkhopp å gjøre blir løst i Bungee.
+KHS: Ja, det gir mening!
 
 !*kommenter koden og kanskje skrive litt i mellom kodeblokkene.
  V: Marie, ser ut som om du har fikset dette?
@@ -270,6 +284,7 @@ Workshop: Projectile Motion
  ser det rart ut fordi det skjer noe feil i konverteringen fra rst til
  html?
  V: Prøver meg på å huke av dette punktet også, men du får se hva du synes :-)
+KHS: Ser veldig bra ut nå :)
 
 !*Generell kommentar: Denne tutorialen er basert på en presentasjon
  -prøv så langt det går å få det til å se ut som slides med lister der
@@ -284,6 +299,9 @@ Workshop: Projectile Motion
 !*"An intro..." Det første avsnittet kan komme før overskriften
 
 !*"An intro...." Poengene 1., 2. og 3. bør være en liste
+KHS: Ser ut som dette ikke fungerer. Hvis det er vanskelig å få til bare sett punktum på slutten av hver setning.
+
+KHS: Det holder kanskje å ha bilde av kanonen en gang?
 
 !*"cannonball" -virker litt tatt ut av sammenhengen
   V: Det var nok bare en "alt text" til et bilde?
@@ -292,6 +310,8 @@ Workshop: Projectile Motion
 
 !*Euler method -linje skift før "From the def..." evt skriv det om så
  dere får en fullstendig setning.
+
+KHS: Det har blitt kjempelang avstand mellom ordene på en linje. ;)
 
 !*"Our functions are no longer...." -dette er en liste bruk symbol
  foran -evt skriv om så det blir fulle setninger. Slik det står nå gir
@@ -345,6 +365,7 @@ Battleship!
 !*list of list = nested list? men det er det samme hva dere kaller det.
  V: "list of lists" er brukt i "introduction to ...", så det er kanskje 
     greit å fortsette med det samme?
+KHS: Ja, behold det!
 
 !*Er overskriftene riktig i dette dokumentet? Bare den første
  overskriften har fått blå boks. 
@@ -352,6 +373,7 @@ Battleship!
      originale pdf-en, er det fint sånn, eller skal jeg sette flere
      overskrifter i blå boks?
   V: endret "Shoot the ship!" til blå også, men resten synes jeg skal være.
+KHS: Det er helt sikkert bra!
 
 *Exercises -igjen skal koden være statisk eller interaktiv? Dere kan
  beholde den interaktiv og be leseren fylle inn slik at koden kjøres
@@ -367,6 +389,7 @@ Battleship!
  si noe om?
   M: Dette er vel kanskje litt opp til hva leseren foretrekker? Vi
      kan kan kanskje komme med noen forslag
+KHS: Det er ikke så farlig. Hvis de leser introen først bør de skjønne hvor de skal løse oppgaven!
 
 !*listen names = ["Lisa", "Mary", "Marcus"] er både som interaktiv boks
  og statisk boks. Det er vel unødvendig? Velg enten statisk eller
