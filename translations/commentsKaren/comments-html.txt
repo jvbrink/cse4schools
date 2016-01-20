@@ -8,15 +8,17 @@ Gjenstår:
 *Fjern den originale :)
   V: Kan Marcin gjøre dette?
 KHS: Ja, jeg skal be han fjerne den. Men kan dere endre titler? Hvis ikke skal jeg be han fjerne "expanded".
+  V: Vi kan ikke endre tittelen, det er nok noe Marcin må gjøre (vi har ikke tilgang til å endre indeksen, så vidt vi vet)
 
 *Vi bør kanskje også ha et punkt om at dette dokumentet ikke
  inneholder oppgaver, men at de finnes et annet sted?
   V: Vi har vel aldri lastet opp oppgavene?
 KHS: Det stemmer sikkert...ikke tenk på det! Det er jo noen oppgaver innimellom!
 
-KHS: Jeg fant en trykkleif under feilmeldinger "at the first line..." mangler stor bokstav.
+!KHS: Jeg fant en trykkleif under feilmeldinger "at the first line..." mangler stor bokstav.
 
 KHS: Under for-loops er det bare forklart at range kan ta to argumenter -men så bruker dere tre. Fint om dere kan forklare det. 
+  M: Før vi bruker tre argumenter står det: "We may also add a third argument, this argument tells us how large the step between the numbers should be. Here are a few examples:"
 -------------------------------------------------------------------------
 
 
@@ -142,8 +144,9 @@ V: La til et punkt "The forces acting on the jumper".
  ikke vært greit å vise hvilke likninger vi løser for å få resultatet?
  Eller i det minste nevne at likningen i avsnittet før kalles
  bevegelseslikningen og at det er løsningen som vises?
-  V: Hm, skjønner ikke helt. "Equations of motion" er nevnt?
-KHS: Ja, de er nevnt tidligere, men da heter de bare "differential equation". 
+   V: Hm, skjønner ikke helt. "Equations of motion" er nevnt?
+!KHS: Ja, de er nevnt tidligere, men da heter de bare "differential equation". 
+   V: Åja, nå skjønner jeg! Endret litt på setningen, tror det ble mer riktig og tydeligere nå.
 
 !*Personlig er jeg veldig forsiktig med å si at noe er enkelt. Det som
  er enkelt for dere kan være komplett uforståelig for elevene. Dere
@@ -164,7 +167,7 @@ KHS: Det er helt sikkert greit!
  formlene blir de samme.
   V: Vet ikke om jeg skjønte dette heller helt, men jeg prøvde i hvert fall å 
     skrive noe som kanskje kan klargjøre (eller kanskje det bare forvirrer).
-KHS: Jeg syns det var oppklarende, men nå er det en latex feil her ;)
+!KHS: Jeg syns det var oppklarende, men nå er det en latex feil her ;)
 
 *Det slår meg at det kanskje ville vært kjekt med likningsnummer så
  dere kan referere fram og tilbake. Det er ikke noe must, altså!
@@ -301,7 +304,7 @@ KHS: Ser veldig bra ut nå :)
 !*"An intro...." Poengene 1., 2. og 3. bør være en liste
 KHS: Ser ut som dette ikke fungerer. Hvis det er vanskelig å få til bare sett punktum på slutten av hver setning.
 
-KHS: Det holder kanskje å ha bilde av kanonen en gang?
+!KHS: Det holder kanskje å ha bilde av kanonen en gang?
 
 !*"cannonball" -virker litt tatt ut av sammenhengen
   V: Det var nok bare en "alt text" til et bilde?
@@ -312,6 +315,8 @@ KHS: Det holder kanskje å ha bilde av kanonen en gang?
  dere får en fullstendig setning.
 
 KHS: Det har blitt kjempelang avstand mellom ordene på en linje. ;)
+  M: Dette kommer av at teksten er satt til å være "justified" i css-en. Det er vanskelig å gjøre noe med når vi ikke har tilgang til 
+     css-fila.
 
 !*"Our functions are no longer...." -dette er en liste bruk symbol
  foran -evt skriv om så det blir fulle setninger. Slik det står nå gir
